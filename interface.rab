@@ -1,0 +1,111 @@
+= Interface
+
+: author
+   Kouhei Sutou
+: institution
+   ClearCode Inc.
+: content-source
+   RubyKaigi 2018
+: date
+   2018-06-01
+: start-time
+   2018-06-01T10:00:00+09:00
+: end-time
+   2018-06-01T11:00:00+09:00
+: theme
+   .
+
+= Interface?
+
+  A | B
+    ^
+   Here
+
+= API
+
+  Library | Program
+          ^
+         API
+
+= Web API
+
+  Server | HTTP | Client
+         ^^^^^^^^
+         Web API
+
+= CLI
+
+  Program | command | User
+          ^^^^^^^^^^^
+    Command Line Interface
+
+= Interface and me
+
+  * Interested in "easy to use"
+
+= RSS Parser
+
+An easy to use RSS parser library
+
+= RSS Parser - History
+
+  * 2003-05: The first release
+  * 2004-01: Ruby bundles this
+    * Became a Ruby committer
+
+= RSS Parser - Interface
+
+  RSS Parser | Programmers
+             ^
+            API
+
+= RSS Parser - API
+
+  * Map RSS structure to class and methods
+
+= RSS Parser - API
+
+  <rss>                          rss = RSS::Parser.parse(data)
+    <channel>                    rss.channel
+      <title>Feed title</title>  rss.channel.title
+    </channel>
+    <item>                       rss.items[0]
+      <title>Item title1</title> rss.items[0].title
+    <item>
+    <item>                       rss.items[1]
+      <title>Item title2</title> rss.items[1].title
+    <item>
+  </rss>
+
+= RSS Parser - Design
+
+  * Premise: Users know RSS\n
+    (('note:前提：ユーザーはRSSを知っている'))
+    * Or users can confirm raw RSS\n
+      (('note:あるいはユーザーは生のRSSを確認できる'))
+  * Easy to use: Map RSS structure
+
+= Interface - Point
+
+  * Premise is important
+
+= RSS Parser - API
+
+  * Validation is important
+
+= RSS Parser - API
+
+  # coderay ruby
+  # Parse with validation by default
+  RSS::Parser.parse(data)
+  # Parse without validation
+  RSS::Parser.parse(data, false)
+
+= RSS Parser - Design
+
+  * Premise: Many broken RSS
+  * Easy to use: No nil check for validated object
+
+= Interface - Point
+
+  * ...
