@@ -15,6 +15,18 @@
 : theme
    .
 
+= Ad: Silver sponsor
+
+  # img
+  # src = images/clear-code-rubykaigi-2018-silver-sponsor.png
+  # relative_height = 100
+  # reflect_ratio = 0.1
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
 = Interface?
 
   A | B
@@ -39,14 +51,28 @@
           ^^^^^^^^^^^
     Command Line Interface
 
-= Me
+= My activities\nas a Rubyist
 
-  * Rubyist
-  * Want to use Ruby everywhere
+  * Expand Ruby usable area
+  * Maintain libraries
 
-= Interface and Ruby anywhere
+= The number of developing libraries
+
+About 130
+
+= Interface and\nRuby anywhere
 
 There are many interfaces
+
+= This talk's content
+
+  * Show what I learned\n
+    from my activities\n
+    (('note:自分の活動で得られた知見を紹介'))
+  * Perspective\n
+    (('note:切り口'))
+    * "Interface"\n
+      (('note:「インターフェイス」'))
 
 = RSS Parser
 
@@ -66,20 +92,35 @@ An easy to use RSS parser library
 
 = RSS Parser - API
 
-  * Map RSS structure to class and methods
+  * Map RSS structure to\n
+    classes and methods
 
-= RSS Parser - API
+= RSS Parser - Map classes
 
-  <rss>                          rss = RSS::Parser.parse(data)
-    <channel>                    rss.channel
-      <title>Feed title</title>  rss.channel.title
+  <rss>                    RSS::Rss
+    <channel>              RSS::Rss::Channel
+      <title>...</title>   String
+      <item>               RSS::Rss::Channel::Item
+        <title>...</title> String
+      <item>
+      <item>               RSS::Rss::Channel::Item
+        <title>...</title> String
+      <item>
     </channel>
-    <item>                       rss.items[0]
-      <title>Item title1</title> rss.items[0].title
-    <item>
-    <item>                       rss.items[1]
-      <title>Item title2</title> rss.items[1].title
-    <item>
+  </rss>
+
+= RSS Parser - Map methods
+
+  <rss>                    rss
+    <channel>              rss.channel
+      <title>...</title>   rss.channel.title
+      <item>               rss.channel.items[0]
+        <title>...</title> rss.channel.items[0].title
+      <item>
+      <item>               rss.channel.items[1]
+        <title>...</title> rss.channel.items[1].title
+      <item>
+    </channel>
   </rss>
 
 = RSS Parser - Design
