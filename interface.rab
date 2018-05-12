@@ -255,6 +255,154 @@ ready
   * 2010: Matz starts using Rabbit
     * Since RubyKaigi 2010?
 
+= Rabbit - Pitch
+
+(('tag:center'))
+(('tag:large'))
+A presentation tool\n
+for ((*Rubyist*))
+
+((' '))
+
+= Rabbit - Run
+
+  # coderay console
+  % rake
+
+= Run - Interface
+
+  Rabbit | rake | Rubyist
+         ^^^^^^^^
+      CLI for Rubyist
+
+= Rabbit - Publish
+
+  # coderay console
+  % rake publish:rubygems
+
+= publish:rubygems
+
+  # coderay console
+  % rake gem
+  Generates pkg/XXX.gem
+  % gem push pkg/XXX.gem
+
+= Rabbit Slide Show
+
+  # img
+  # src = images/rabbit-slide-show.png
+  # relative_height = 78
+
+(('tag:center'))
+(('tag:small'))
+((<URL:https://slide.rabbit-shocker.org/>))
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Publish - Interface
+
+  Rabbit | gem push | Rubyist
+         ^^^^^^^^^^^^
+         Slide as a Gem
+
+= Slide as a Gem
+
+  # coderay console
+  % rake gem
+  % gem unpack pkg/*.gem
+  % tree rabbit-slide*
+
+= PDF in gem
+
+  # coderay console
+  % tree rabbit-slide*
+  ├── README.rd
+  ...
+  ├── pdf
+  │   └── rubykaigi-2018-interface.pdf
+  ...
+
+= Publish PDF in gem
+
+  (1) Receive published notifications from rubygems.org
+  (2) Render PDF in gems for Web browser
+
+(('tag:center'))
+(('tag:xx-small'))
+((<URL:https://github.com/rabbit-shocker/slide.rabbit-shocker.org>))
+
+= Receive notifications
+
+  # coderay console
+  % curl \
+      -H 'Authorization:...' \
+      -F 'gem_name=*' \
+      -F 'url=https://slide.rabbit-shocker.org/web-hook-receiver/' \
+      https://rubygems.org/api/v1/web_hooks
+
+(('tag:center'))
+(('tag:xx-small'))
+((<URL:https://guides.rubygems.org/rubygems-org-api/#webhook-methods>))
+
+= Render PDF
+
+Combine the following gems
+  * poppler - PDF parser
+  * cairo - 2D graphics library
+
+= poppler & cairo
+
+Makes Ruby\n
+((*PDF*))\n
+ready
+
+= poppler - History
+
+  * 2006-07: The first release
+
+= poppler - Parse
+
+  # coderay ruby
+  pdf = Poppler::Document.new(content)
+  pdf.each do |page|
+    # Convert each page to PNG
+  end
+
+= cairo - History
+
+  * 2003-10: The initial commit
+    * Not by me
+  * 2005-09: I started developing
+    * Sent several patches and\n
+      got commit bit and more
+  * 2005-10: The first release
+
+= cairo - Output
+
+((*PNG*)), PDF, SVG, X, Quarts, Win32, ...
+
+(('tag:xx-small'))
+See also: More about cairo gem in Japanese\n
+((<URL:http://magazine.rubyist.net/articles/0019/0019-cairo.html>))
+
+= cairo - To PNG
+
+  # coderay ruby
+  iw, ih = image_width, image_height
+  Cairo::ImageSurface.new(:argb32, iw, ih) do |surface|
+    Cairo::Context.new(surface) do |context|
+      width, height = page.size
+      x_scale = iw / width.to_f
+      y_scale = ih / height.to_f
+      context.scale(x_scale, y_scale)
+      context.render_poppler_page(page) # Render PDF page
+      surface.write_to_png("XXX.png")   # Save to file
+    end
+  end
+
 = TODO
 
 i18n
