@@ -60,23 +60,23 @@
 
 About 130
 
-= Interface and\nRuby anywhere
+= Ruby anywhere
 
 There are many interfaces
 
 = This talk's content
 
-  * Show what I learned\n
+  * Show my knowledge\n
     from my activities\n
     (('note:自分の活動で得られた知見を紹介'))
-  * Perspective\n
-    (('note:切り口'))
-    * "Interface"\n
-      (('note:「インターフェイス」'))
+  * Perspective："Interface"\n
+    (('note:切り口：「インターフェイス」'))
 
 = RSS Parser
 
-An easy to use RSS parser library
+Makes Ruby\n
+((*Web feed*))\n
+ready
 
 = RSS Parser - History
 
@@ -92,10 +92,11 @@ An easy to use RSS parser library
 
 = RSS Parser - API
 
-  * Map RSS structure to\n
-    classes and methods
+  * Map RSS structure to
+    * classes and
+    * methods
 
-= RSS Parser - Map classes
+= Map to classes
 
   <rss>                    RSS::Rss
     <channel>              RSS::Rss::Channel
@@ -109,7 +110,7 @@ An easy to use RSS parser library
     </channel>
   </rss>
 
-= RSS Parser - Map methods
+= Map to methods
 
   <rss>                    rss
     <channel>              rss.channel
@@ -123,38 +124,136 @@ An easy to use RSS parser library
     </channel>
   </rss>
 
-= RSS Parser - Design
+= Pros
 
-  * Premise: Users know RSS\n
-    (('note:前提：ユーザーはRSSを知っている'))
-    * Or users can confirm raw RSS\n
-      (('note:あるいはユーザーは生のRSSを確認できる'))
-  * Easy to use: Map RSS structure
+Users can guess API from their data
 
-= Interface - Point
+= Example
 
-  * Premise is important
+  <rss>                    # Want /rss/channel/item/title!
+    <channel>              rss.channel.items.each do |item|
+      <title>...</title>
+      <item>
+  HERE: <title>...</title>   p item.title
+      <item>
+      <item>
+  HERE: <title>...</title>
+      <item>
+    </channel>             end
+  </rss>
 
-= RSS Parser - API
+= Cons
 
-  * Validation is important
+Verbose\n
+for expert
 
-= RSS Parser - API
+= Cons - Interface
+
+  RSS Parser | Not experts
+           Good
+
+  RSS Parser | Experts
+          Verbose
+
+= Example
+
+  <rss>                    # Want item/title!
+    <channel>              # Don't want to care
+      <title>...</title>   # about channel.
+      <item>               rss.items.each do |item|
+  HERE: <title>...</title>   p item.title
+      <item>
+      <item>
+  HERE: <title>...</title>
+      <item>               end
+    </channel>
+  </rss>
+
+= Cons
+
+Not generic
+
+= Web feed types
+
+  * RSS 0.9*/2.0
+    * Really Simple Syndication
+  * RSS 1.0
+    * RDF Site Summary
+  * Atom
+    * RFC 4287
+
+= Differences
+
+They are ((*NOT*)) compatible
+
+= Differences - Interface
+
+  RSS Parser | RSS 0.9*/2.0
+  RSS Parser | RSS 1.0
+  RSS Parser | Atom
+             ^
+    Different structures
+
+= What users want
+
+Process\n
+all feed types\n
+in the same way
+
+= + High level API
 
   # coderay ruby
-  # Parse with validation by default
-  RSS::Parser.parse(data)
-  # Parse without validation
-  RSS::Parser.parse(data, false)
+  # RSS 0.9*/20
+  rss.items # /rss/channel/item
+  # RSS 1.0
+  rdf.items # /RDF/item
+  # Atom
+  feed.items # /feed/entry
+
+= + High level API
+
+  Users | RSS Parser | RSS 0.9*/2.0
+  Users | RSS Parser | RSS 1.0
+  Users | RSS Parser | Atom
+        ^            ^
+   Common API  Different structures
 
 = RSS Parser - Design
 
-  * Premise: Many broken RSS
-  * Easy to use: No nil check for validated object
+  * Premise:(('note:前提：'))
+    * Users can confirm their data\n
+      (('note:ユーザーは自分たちのデータを確認できる'))
+  * Easy to use:(('note:使いやすくするために：'))
+    * Map data structure to Ruby\n
+      (('note:データの構造をそのままRubyの世界に対応させる'))
+    * + common feed type aware API\n
+      (('note:さらにフィードの種類に依存しない共通APIも用意'))
 
-= Interface - Point
+= Knowledge - RSS Parser
 
-  * ...
+  * Premise is important for API\n
+    (('note:API設計に前提は大事'))
+  * Different API layer for\n
+    different type users\n
+    (('note:違う種類のユーザーには違うAPIのレイヤーを'))
+
+= RSS Parser - Snip
+
+Validation\n
+is\n
+important
+
+= Rabbit
+
+Makes Ruby\n
+((*presentation*))\n
+ready
+
+= Rabbit - History
+
+  * 2004-07: The first release
+  * 2010: Matz starts using Rabbit
+    * Since RubyKaigi 2010?
 
 = TODO
 
