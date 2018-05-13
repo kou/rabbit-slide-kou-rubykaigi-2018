@@ -53,7 +53,7 @@
 
 = My activities\nas a Rubyist
 
-  * Expand Ruby usable area
+* Expand "Ruby ready" areas
   * Maintain libraries
 
 = The number of developing libraries
@@ -237,7 +237,7 @@ in the same way
     different type users\n
     (('note:違う種類のユーザーには違うAPIのレイヤーを'))
 
-= RSS Parser - Snip
+= RSS Parser - Omit
 
 Validation\n
 is\n
@@ -306,7 +306,9 @@ for ((*Rubyist*))
 
   Rabbit | gem push | Rubyist
          ^^^^^^^^^^^^
-         Slide as a Gem
+     Like a normal library
+        No Web browser
+   Your slides are versioned
 
 = Slide as a Gem
 
@@ -347,6 +349,12 @@ for ((*Rubyist*))
 (('tag:xx-small'))
 ((<URL:https://guides.rubygems.org/rubygems-org-api/#webhook-methods>))
 
+= Notification - Interface
+
+  slide.rabbit-shocker.org | RubyGems.org
+                           ^
+                        Web hook
+
 = Render PDF
 
 Combine the following gems
@@ -362,6 +370,7 @@ ready
 = poppler - History
 
   * 2006-07: The first release
+  * 2018-05: The latest release
 
 = poppler - Parse
 
@@ -371,16 +380,23 @@ ready
     # Convert each page to PNG
   end
 
+= poppler - Interface
+
+  poppler |  path | PDF
+  poppler |content| PDF
+          ^^^^^^^^^
+            Input
+
 = cairo - History
 
   * 2003-10: The initial commit
-    * Not by me
   * 2005-09: I started developing
     * Sent several patches and\n
       got commit bit and more
   * 2005-10: The first release
+  * 2018-05: The latest release
 
-= cairo - Output
+= cairo - Outputs
 
 ((*PNG*)), PDF, SVG, X, Quarts, Win32, ...
 
@@ -392,16 +408,192 @@ See also: More about cairo gem in Japanese\n
 
   # coderay ruby
   iw, ih = image_width, image_height
-  Cairo::ImageSurface.new(:argb32, iw, ih) do |surface|
+  Cairo::ImageSurface.new(iw, ih) do |surface|
     Cairo::Context.new(surface) do |context|
       width, height = page.size
       x_scale = iw / width.to_f
       y_scale = ih / height.to_f
       context.scale(x_scale, y_scale)
-      context.render_poppler_page(page) # Render PDF page
-      surface.write_to_png("XXX.png")   # Save to file
+      context.render_poppler_page(page) # Render
+      surface.write_to_png("XXX.png")   # Save
     end
   end
+
+= cairo - Interface
+
+  cairo |Poppler::Page| PNG
+        ^^^^^^^^^^^^^^^
+            Input
+
+= PDF on the Web - Link
+
+  # img
+  # src = images/pdf-clickable.png
+  # relative_height = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Link in image in HTML
+
+  # coderay html
+  <map id="XXX">
+    <area href="..."
+          shape="rect"
+          coords="X,Y,W,H">
+  </map>
+  <img usemap="#XXX">
+
+= poppler - coords
+
+  # coderay ruby
+  pdf.each do |page|
+    page.link_mapping.each do |mapping|
+      href = mapping.action
+      x, y, w, h = mapping.area.to_a
+      coords = "#{x},#{y},#{w},#{h}"
+      # Generate <area>
+    end
+  end
+
+= Link - Interface
+
+  PDF |poppler| HTML
+      ^^^^^^^^^
+  Extract information
+
+= Rabbit - Input
+
+  * Source
+    * RD (Ruby Document), Markdown(('note:, PDF, image, ...'))
+  * Theme
+    * Ruby scripts
+
+= Input - Interface
+
+  Rabbit |texts| Rubyist
+         ^^^^^^^
+   Version controllable
+   Like normal programs
+
+= Knowledge - Rabbit
+
+  * Pitch is important for interface\n
+    (('note:インターフェイス設計にピッチは大事'))
+    * "for ((*Rubyist*))" for Rabbit
+  * Use similar way for the original
+
+= Rabbit - Theme
+
+Define view\n
+by Ruby\n
+(('note:Rubyで見た目を定義'))
+
+= Theme - Layers
+
+  * Customize parameters
+  * Normal Ruby codes to\n
+    control render something
+
+= Theme - Parameters
+
+  # coderay ruby
+  # CSS selector inspired API:
+  #   title-slide author {
+  #     margin_top: 2px;
+  #     margin_bottom: 1px;
+  #   }
+  match(TitleSlide, Author) do |authors|
+    authors.margin_top = @space * 2
+    authors.margin_bottom = @space
+  end
+
+= Theme - Render
+
+  # coderay ruby
+  match(Slide) do |slides|
+    loader = ImageLoader.new("mini-kame-taro.png")
+    slides.add_post_draw_proc do
+      x = ... # Compute the next tortoise position
+      loader.draw(canvas, x, y, parameters)
+    end
+  end
+
+= (('note:The')) Tortoise and (('note:the')) Hare\nin Rabbit\n(('note:Rabbitでうさぎとかめ'))
+
+  # img
+  # src = images/the-tortoise-and-the-hare.png
+  # relative_width = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Hare - Slide position\n(('note:うさぎはスライド位置'))
+
+  # img
+  # src = images/the-tortoise-and-the-hare-hare.png
+  # relative_width = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Tortoise - Timer\n(('note:かめはタイマー'))
+
+  # img
+  # src = images/the-tortoise-and-the-hare-tortoise.png
+  # relative_width = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Slow\n(('note:遅い'))
+
+  # img
+  # src = images/the-tortoise-and-the-hare-slow.png
+  # relative_width = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Good\n(('note:ちょうどいい'))
+
+  # img
+  # src = images/the-tortoise-and-the-hare-good.png
+  # relative_width = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Fast\n(('note:速い'))
+
+  # img
+  # src = images/the-tortoise-and-the-hare-fast.png
+  # relative_width = 100
+  # reflect_ratio = 0.05
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
 
 = TODO
 

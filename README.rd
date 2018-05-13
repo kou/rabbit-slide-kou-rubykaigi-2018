@@ -1,6 +1,11 @@
 = Interface
 
-There are many interfaces when you write code with Ruby and you use Ruby. If you know more about interfaces, you will be able to write better code with Ruby.
+Here are my activities as a Rubyist:
+
+  * Expand "Ruby ready" areas
+  * Maintain libraries
+
+In this talk, I show my knowledge from my activities with "interface" perspective. There are many interfaces in "Ruby anywhere" situation.
 
 == License
 
