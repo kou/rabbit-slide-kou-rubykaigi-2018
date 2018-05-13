@@ -1,11 +1,11 @@
-= Interface
+= My way with Ruby
 
 Here are my activities as a Rubyist:
 
-  * Expand "Ruby ready" areas
+  * Increase what Ruby can
   * Maintain libraries
 
-In this talk, I show my knowledge from my activities with "interface" perspective. There are many interfaces in "Ruby anywhere" situation.
+In this talk, I introduces my activities.
 
 == License
 

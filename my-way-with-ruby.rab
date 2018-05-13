@@ -1,0 +1,217 @@
+= My way with Ruby
+
+: author
+   Kouhei Sutou
+: institution
+   ClearCode Inc.
+: content-source
+   RubyKaigi 2018
+: date
+   2018-06-01
+: start-time
+   2018-06-01T09:40:00+09:00
+: end-time
+   2018-06-01T10:40:00+09:00
+: theme
+   .
+
+= Ad: Silver sponsor
+
+  # img
+  # src = images/clear-code-rubykaigi-2018-silver-sponsor.png
+  # relative_height = 100
+  # reflect_ratio = 0.1
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= My activities\nas a Rubyist
+
+  * Increase what Ruby can
+  * Maintain libraries
+
+= The number of developing libraries
+
+About 130
+
+= How to find targets?\n(('note:そんなにネタがあるの？'))
+
+Just I needed\n
+(('note:単に自分が必要だったから'))
+
+= RSS Parser
+
+RSS/Atom parser\n
+with\n
+((*validation*))
+
+= RSS Parser - History
+
+  * 2003-05: The first release
+  * 2004-01: Ruby bundles this
+    * Became a Ruby committer
+
+= Validate RSS/Atom
+
+  * Important for me
+  * Most wild RSS/Atom feeds are\n
+    ((*invalid*))
+    * Validation helps to find problems
+
+= RSS::Parser.parse
+
+  # coderay ruby
+  # Validate by default
+  RSS::Parser.parse(rss)
+  # Validation can be disabled
+  RSS::Parser.parse(rss, false)
+
+= Since Ruby 2.6
+
+  # coderay ruby
+  # Support option Hash
+  parse(rss, validate: false)
+
+= REXML
+
+XML parser\n
+written in\n
+((*pure Ruby*))
+
+= REXML - History
+
+  * 2001?: Start by Sean Russell\n
+    (('note:書運さんが開発を開始'))
+    * Based on Electric XML (Java)
+    * REXML is Ruby Electric XML
+  * 2003-01: Ruby bundles this
+
+= REXML - Recent
+
+  * 2010-08: RubyKaigi 2010
+    * I became the maintainer
+  * 2018: Fix XPath related bugs
+    * Ruby 2.6 ships it
+
+= REXML - Future?
+
+  * ((*Pure Ruby*)) is valuable
+    * Easy to install
+    * JIT may improve performance
+
+= Recent my works
+
+  * XML/HTML libraries for LuaJIT
+    * XMLua: (('tag:x-small:((<URL:https://clear-code.github.io/xmlua/>))'))\n
+      libxml2 based XML/HTML parser
+    * LuaCS: (('tag:x-small:((<URL:https://clear-code.github.io/luacs/>))'))\n
+      CSS Selectors→XPath converter
+  * Found what lacks in REXML API
+
+= REXML - Future1
+
+Introduce NodeSet
+
+= REXML - NodeSet
+
+  # coderay ruby
+  doc.
+    search("//item"). # => NodeSet
+    text # All texts in <item>
+
+= REXML - Future2
+
+Support\n
+CSS Selectors
+
+= REXML - CSS Selectors
+
+  # coderay ruby
+  doc.css_select("ul li, dl dt")
+
+= REXML - Future3
+
+Support\n
+HTML5 support
+
+= REXML - HTML5
+
+  # coderay ruby
+
+  doc = REXML::HTML5Document.new(html5)
+  doc.search("//li")
+  doc.css_select("ul li")
+
+= REXML - Future
+
+  * Low priority in my activities
+  * Do you want to work with me?
+
+= Rabbit
+
+(('tag:center'))
+(('tag:large'))
+Presentation tool\n
+for ((*Rubyist*))
+
+((' '))
+
+= Rabbit - History
+
+  * 2004-07: The first release
+  * 2010: Matz starts using Rabbit
+    * Since RubyKaigi 2010?
+
+= What's needed for presentation tool?
+
+GUI
+
+= Ruby/GTK3
+
+Multi-platform GUI toolkit
+
+= Ruby/GTK3 - History
+
+  * 1998-01: The first release by Matz\n
+    ((<[ruby-list:5877]|URL:http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5877>))
+  * 2004-05: I joined development
+  * 2018-05: The latest release
+
+= Ruby/GTK3 - Example
+
+  # coderay ruby
+  require "gtk3"
+  app = Gtk::Application.new
+  app.signal_connect(:activate) do
+    window = Gtk::ApplicationWindow.new(app)
+    window.show_all
+  end
+  app.run
+
+= What's needed for presentation tool?
+
+Text rendering
+
+= Ruby/Pango
+
+Text layout engine with\n
+i18n support
+
+(('note:i18n: Internationalization'))
+
+= Ruby/Pango - History
+
+  * 2002-12: The initial commit
+
+= Ruby/Pango - Example
+
+  # coderay ruby
+
+  window.signal_connect("draw") do |_, context|
+    layout = context.create_pango_layout
+    layout.text = "Helloこんにちは🍣"
+    context.show_pango_layout(layout)
+    GLib::Source::CONTINUE
+  end
