@@ -190,6 +190,37 @@ Multi-platform GUI toolkit
   end
   app.run
 
+= Approaches on\nmissing libraries(1)
+
+  (1) Implement only the needed features
+  (2) then back to Rabbit
+
+= Approaches on\nmissing libraries(2)
+
+  (1) Implement not only the needed features
+  (2) but also (('note:almost')) all features
+  (3) then back to Rabbit
+
+= My approach
+
+Implement all features\n
+(('note:testing with Rabbit'))
+
+= My priority
+
+  * Rabbit is important
+  * Increasing what Ruby can is also important
+
+= GTK+ 3 - Size
+
+3000 over API
+
+= How to implement
+
+Handwriting\n
+↓\n
+Auto generation
+
 = What's needed for presentation tool?
 
 Text rendering
