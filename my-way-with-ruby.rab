@@ -85,13 +85,15 @@ written in\n
   * 2001?: Start by Sean Russell\n
     (('note:書運さんが開発を開始'))
     * Based on Electric XML (Java)
-    * REXML is Ruby Electric XML
+    * REXML is "Ruby Electric XML"
   * 2003-01: Ruby bundles this
 
 = REXML - Recent
 
   * 2010-08: RubyKaigi 2010
     * I became the maintainer
+  * 2016: (({element[attribute_name]}))
+    * Ruby 2.5 ships it
   * 2018: Fix XPath related bugs
     * Ruby 2.6 ships it
 
@@ -99,7 +101,8 @@ written in\n
 
   * ((*Pure Ruby*)) is valuable
     * Easy to install
-    * JIT may improve performance
+    * JIT may improve performance\n
+      (('note:NOTE: We should improve general logic before we expect JIT to improve performance😉'))
 
 = Recent my works
 
