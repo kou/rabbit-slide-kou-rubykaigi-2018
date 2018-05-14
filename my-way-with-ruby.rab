@@ -164,7 +164,7 @@ for ((*Rubyist*))
 = Rabbit - History
 
   * 2004-07: The first release
-  * 2010: Matz starts using Rabbit
+  * 2010: Matz migrated to Rabbit
     * Since RubyKaigi 2010?
 
 = What's needed for presentation tool?
