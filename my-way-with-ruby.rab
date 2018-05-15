@@ -88,6 +88,34 @@ written in\n
     * REXML is "Ruby Electric XML"
   * 2003-01: Ruby bundles this
 
+= REXML - Side story
+
+  * Sean Russel has Kanji notation "書運"
+  * Most non Japanese who I contacted were interested in Japan
+    * How to write your name in Kanji?
+  * We can connect with Ruby!
+
+= Ad: Code Party
+
+  # img
+  # src = images/code-party.png
+  # relative_height = 100
+  # reflect_ratio = 0.1
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Ad: Code Party
+
+(('tag:center'))
+This is a challenge
+
+  * Ruby focus to have fun
+  * We have fun writing Ruby
+  * We have fun together with writing Ruby at after party!?
+
 = REXML - Recent
 
   * 2010-08: RubyKaigi 2010
@@ -223,6 +251,46 @@ Implement all features\n
 Handwriting\n
 ↓\n
 Auto generation
+
+= Ruby/GI
+
+(('tag:center'))
+(('tag:large'))
+Generate bindings\n
+automatically\n
+at run time
+
+(('note:GI: GObject Introspection'))
+
+= Ruby/GI - History
+
+  * 2012: The first commit by me
+  * 2014: Ruby/GTK3 uses Ruby/GI
+  * 2016: Introduce at RubyKaigi
+    * (('tag:xx-small'))
+      ((<URL:http://rubykaigi.org/2016/presentations/ktou.html>))
+
+= GI - Summary
+
+  # img
+  # src = images/bindings-by-gobject-introspection.svg
+  # relative_width = 100
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= SWIG - Summary
+
+  # img
+  # src = images/bindings-by-swig.svg
+  # relative_width = 100
+
+== Slide properties
+
+: enable-title-on-image
+   false
 
 = What's needed for presentation tool?
 
