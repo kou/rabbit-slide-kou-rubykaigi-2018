@@ -204,6 +204,35 @@ for ((*Rubyist*))
   * 2010: Matz migrated to Rabbit
     * Since RubyKaigi 2010?
 
+= For Rubyist?
+
+(('tag:center'))
+(('tag:x-large'))
+RD support
+
+(('tag:margin-top * 5'))
+(('note:RD: Ruby Document'))
+
+= RD
+
+Designed by Matz\n
+(('note:(Right?)'))
+
+= For Rubyist?
+
+Publish our slides as usual
+
+= Publish as usual
+
+  # coderay console
+  % gem push your-slide-1.0.gem
+
+= Published!
+
+TODO: Image
+
+https://slide.rabbit-shocker.org/
+
 = What's needed for presentation tool?
 
 GUI
