@@ -50,6 +50,7 @@ with\n
 = RSS Parser - History
 
   * 2003-05: The first release
+    * No other RSS parser that supports validation even now
   * 2004-01: Ruby bundles this
     * Became a Ruby committer
 
@@ -116,12 +117,19 @@ This is a challenge
   * We have fun writing Ruby
   * We have fun together with writing Ruby at after party!?
 
-= REXML - Recent
+= REXML - Recent1
 
   * 2010-08: RubyKaigi 2010
     * I became the maintainer
+    * Because RSS Parser uses it
+
+= REXML - Recent2
+
   * 2016: (({element[attribute_name]}))
     * Ruby 2.5 ships it
+
+= REXML - Recent3
+
   * 2018: Fix XPath related bugs
     * Ruby 2.6 ships it
 
@@ -192,6 +200,7 @@ for ((*Rubyist*))
 = Rabbit - History
 
   * 2004-07: The first release
+    * No other presentation tool for Rubyist even now
   * 2010: Matz migrated to Rabbit
     * Since RubyKaigi 2010?
 
