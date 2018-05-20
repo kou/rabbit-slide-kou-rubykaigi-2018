@@ -206,21 +206,20 @@ for ((*Rubyist*))
 
 = For Rubyist?
 
-(('tag:center'))
-(('tag:x-large'))
 RD support
-
-(('tag:margin-top * 5'))
-(('note:RD: Ruby Document'))
 
 = RD
 
-Designed by Matz\n
-(('note:(Right?)'))
+  * A text based markup language
+    * Version controllable
+  * Designed by Matz\n
+    (('note:(Right?)'))
 
 = For Rubyist?
 
-Publish our slides as usual
+Publish\n
+our slides\n
+as usual
 
 = Publish as usual
 
@@ -229,9 +228,13 @@ Publish our slides as usual
 
 = Published!
 
-TODO: Image
+  # img
+  # src = images/rabbit-slide-show.png
+  # relative_height = 78
 
-https://slide.rabbit-shocker.org/
+(('tag:center'))
+(('tag:small'))
+((<URL:https://slide.rabbit-shocker.org/>))
 
 = What's needed for presentation tool?
 
@@ -296,22 +299,22 @@ Auto generation
 (('tag:large'))
 Generate bindings\n
 automatically\n
-at run time
+at run-time
 
 (('note:GI: GObject Introspection'))
 
 = Ruby/GI - History
 
   * 2012: The first commit by me
-  * 2014: Ruby/GTK3 uses Ruby/GI
-  * 2016: Introduce at RubyKaigi
+  * 2014: Ruby/GTK3 used Ruby/GI
+  * 2016: Introduced at RubyKaigi
     * (('tag:xx-small'))
       ((<URL:http://rubykaigi.org/2016/presentations/ktou.html>))
 
-= GI - Summary
+= Handwriting
 
   # img
-  # src = images/bindings-by-gobject-introspection.svg
+  # src = images/ruby-gtk3-without-ruby-gi.svg
   # relative_width = 100
 
 == Slide properties
@@ -319,10 +322,10 @@ at run time
 : enable-title-on-image
    false
 
-= SWIG - Summary
+= Auto generation
 
   # img
-  # src = images/bindings-by-swig.svg
+  # src = images/ruby-gtk3-with-ruby-gi.svg
   # relative_width = 100
 
 == Slide properties
@@ -330,9 +333,9 @@ at run time
 : enable-title-on-image
    false
 
-= What's needed for presentation tool?
+= Ruby/GI based bindings
 
-Text rendering
+Ruby/Pango
 
 = Ruby/Pango
 
@@ -340,10 +343,6 @@ Text layout engine with\n
 i18n support
 
 (('note:i18n: Internationalization'))
-
-= Ruby/Pango - History
-
-  * 2002-12: The initial commit
 
 = Ruby/Pango - Example
 
@@ -355,3 +354,66 @@ i18n support
     context.show_pango_layout(layout)
     GLib::Source::CONTINUE
   end
+
+= Ruby/GI based bindings
+
+Ruby/Pango
+
+= Ruby/Pango
+
+Text layout engine with\n
+i18n support
+
+(('note:i18n: Internationalization'))
+
+= Ruby/Pango - Example
+
+  # coderay ruby
+
+  window.signal_connect("draw") do |_, context|
+    layout = context.create_pango_layout
+    layout.text = "Helloこんにちは。🍣"
+    context.show_pango_layout(layout)
+    GLib::Source::CONTINUE
+  end
+
+= Ruby/Pango - Example
+
+Hello
+
+مرحبا
+
+こんにちは
+
+= Ruby/GI based bindings
+
+Ruby/GdkPixbuf2
+
+= Ruby/GdkPixbuf2
+
+Image manipulation
+
+= Ruby/GdkPixbuf2 - Example
+
+  # coderay ruby
+
+  require "gdk_pixbuf2"
+  # Load an image: Format is auto detected
+  pixbuf = GdkPixbuf::Pixbuf.new(file: "x.png")
+  # Scale to half size
+  half = pixbuf.scale(pixbuf.width / 2,
+                      pixbuf.height / 2,
+                      :bilinear)
+  # Save as different format
+  half.save("half.jpg")
+
+= Ruby/GdkPixbuf2 - Example
+
+  # img
+  # src = images/the-tortoise-and-the-hare.gif
+  # relative_width = 100
+
+== Slide properties
+
+: enable-title-on-image
+   false

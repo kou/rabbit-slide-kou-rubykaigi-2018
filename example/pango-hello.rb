@@ -7,7 +7,7 @@ app.signal_connect(:activate) do
     context.set_source_color("white")
     context.paint
     context.set_source_color("black")
-    markup = "<span color='red'>Hello</span>こんにちは🍣"
+    markup = "<span color='red'>Hello</span>こんにちは。🍣"
     attributes, text = Pango.parse_markup(markup)
     layout = context.create_pango_layout
     layout.text = text
