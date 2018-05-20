@@ -417,3 +417,28 @@ Image manipulation
 
 : enable-title-on-image
    false
+
+= Ruby/GI based bindings
+
+Ruby/Poppler
+
+= Ruby/Poppler
+
+PDF renderer
+
+= Ruby/Poppler - Example
+
+TODO
+
+= Ruby/GI based bindings
+
+Ruby/GtkSourceView3
+
+= Ruby/GtkSourceView3
+
+Source editor
+
+= Ruby/GtkSourceView3 - Example
+
+TODO
+
