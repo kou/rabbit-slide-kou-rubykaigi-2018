@@ -5,7 +5,7 @@ Here are my activities as a Rubyist:
   * Increase what Ruby can
   * Maintain libraries
 
-In this talk, I introduces my activities.
+In this talk, I introduce my activities.
 
 == License
 
