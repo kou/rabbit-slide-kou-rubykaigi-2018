@@ -348,31 +348,9 @@ i18n support
 
   # coderay ruby
 
-  window.signal_connect("draw") do |_, context|
+  window.signal_connect(:draw) do |_, context|
     layout = context.create_pango_layout
     layout.text = "Helloこんにちは🍣"
-    context.show_pango_layout(layout)
-    GLib::Source::CONTINUE
-  end
-
-= Ruby/GI based bindings
-
-Ruby/Pango
-
-= Ruby/Pango
-
-Text layout engine with\n
-i18n support
-
-(('note:i18n: Internationalization'))
-
-= Ruby/Pango - Example
-
-  # coderay ruby
-
-  window.signal_connect("draw") do |_, context|
-    layout = context.create_pango_layout
-    layout.text = "Helloこんにちは。🍣"
     context.show_pango_layout(layout)
     GLib::Source::CONTINUE
   end
@@ -432,13 +410,60 @@ TODO
 
 = Ruby/GI based bindings
 
-Ruby/GtkSourceView3
+Ruby/GStreamer
 
-= Ruby/GtkSourceView3
+= Ruby/GStreamer
 
-Source editor
+Audio/Video player
 
-= Ruby/GtkSourceView3 - Example
+(*) Streaming media framework
+
+= Ruby/GStreamer - Example
 
 TODO
+
+#  # video
+#  # src = test.mp4
+
+= What's needed for presentation tool?
+
+PDF output
+
+= rcairo
+
+2D graphics renderer
+
+= rcairo - Outputs
+
+  * PNG
+  * ((*PDF*))
+  * SVG
+  * ((*Display*)) (X/macOS/Windows)
+  * ...
+
+= rcairo - History
+
+  * 2003-10: The initial commit
+  * 2005-09: I started developing
+    * Sent several patches and\n
+      got commit bit and more
+  * 2005-10: 1.0.0
+
+= rcairo - Example
+
+  # coderay ruby
+
+  window.signal_connect(:draw) do |_, context|
+    # context is an object in rcairo!
+    layout = context.create_pango_layout
+    layout.text = "Helloこんにちは🍣"
+    context.show_pango_layout(layout)
+    GLib::Source::CONTINUE
+  end
+
+= Full text search
+
+= Test
+
+= Data processing
 
