@@ -246,7 +246,7 @@ Multi-platform GUI toolkit
 
 = Ruby/GTK3 - History
 
-  * 1998-01: The first release by Matz\n
+  * 1998-01: 1st release by Matz\n
     ((<[ruby-list:5877]|URL:http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5877>))
   * 2004-05: I joined development
   * 2018-05: The latest release
@@ -307,9 +307,6 @@ at run-time
 
   * 2012: The first commit by me
   * 2014: Ruby/GTK3 used Ruby/GI
-  * 2016: Introduced at RubyKaigi
-    * (('tag:xx-small'))
-      ((<URL:http://rubykaigi.org/2016/presentations/ktou.html>))
 
 = Handwriting
 
@@ -332,6 +329,15 @@ at run-time
 
 : enable-title-on-image
    false
+
+= Ruby/GI - See also
+
+  * "How to create bindings 2016" at RubyKaigi 2016
+    * (('tag:xx-small'))
+      ((<URL:http://rubykaigi.org/2016/presentations/ktou.html>))
+  * "GI Introduction" (('note:(in Japanese)'))
+    * (('tag:xx-small'))
+      ((<URL:https://github.com/RubyData/workshop-materials/blob/master/gobject-introspection/introduction.md>))
 
 = Ruby/GI based bindings
 
@@ -461,9 +467,108 @@ PDF output
     GLib::Source::CONTINUE
   end
 
-= Full text search
+= test-unit
 
-= Test
+Testing framework\n
+to write tests\n
+((*in Ruby*))
+
+= test-unit - History
+
+  * 2003-02: Import to Ruby
+  * 2008-05: I became a maintainer
+  * 2008-10: Removed from Ruby
+
+(('note:See also: "The history of testing framework in Ruby"'))\n
+(('tag:x-small'))((<URL:http://rubykaigi.org/2015/presentations/kou>))
+
+= test-unit - New feature
+
+Grouping
+
+= Grouping
+
+(('tag:center'))
+The most important feature
+
+  * For maintainable tests
+  * TODO
+
+= Grouping - Example
+
+  # coderay ruby
+
+  class StackTest < Test::Unit::TestCase
+    class PushTest < self
+      def test_XXX; end
+    end
+    class PopTest < self
+      def test_XXX; end
+    end
+  end
+
+= Grouping - Method style
+
+  # coderay ruby
+
+  class StackTest < Test::Unit::TestCase
+    sub_test_case("#push") do
+      def test_XXX; end
+    end
+    sub_test_case("#pop") do
+      def test_XXX; end
+    end
+  end
+
+= test-unit - New feature
+
+Data driven test
+
+= Data driven test
+
+  # coderay ruby
+
+  data("positive", [3,  1, 2])
+  data("negative", [-4, 1, -5])
+  def test_add(data)
+    expected, augend, addend = data
+    assert_equal(expected,
+                 add(augend, addend))
+  end
+
+= test-unit - New feature
+
+Reverse backtrace
+
+= Reverse backtrace
+
+  * Reverse backtrace only when terminal output
+  * The same change as Ruby 2.5.0
+
+= test-unit - New feature
+
+Test double
+
+= test-unit-rr
+
+RR integration
+
+= RR - History
+
+  * 2007-06: The initial commit
+  * 2014-12: Orphan
+  * 2015-05: I became a maintainer
+
+= RR - Example
+
+  # coderay ruby
+
+  adder = Object.new
+  adder.add(1, 2) # => Error
+  stub(adder).add(1, 2) {3}
+  adder.add(1, 2) # => 3
+
+= Full text search
 
 = Data processing
 
