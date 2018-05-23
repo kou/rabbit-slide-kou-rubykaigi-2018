@@ -639,7 +639,7 @@ Full text search\n
   end
   p matches.size # => 1
   matches.each do |record|
-    p record.content # ""String#<< concat..."
+    p record.content # => "String#<< concat..."
   end
 
 = Use case - Rurema Search
@@ -676,7 +676,111 @@ Full text search\n
 
 = groonga-client - Example
 
-TODO
+  # coderay ruby
+
+  require "groonga/client"
+  url = "http://localhost:10041"
+  Groonga::Client.open(url: url) do |client|
+    response =
+      client.select(table: "docs",
+                    match_columns: "content",
+                    query: "concat")
+    p response.n_hits # => 1
+  end
+
+= Asynchronous
+
+  # coderay ruby
+
+  client.select(table: "docs",
+                match_columns: "content",
+                query: "concat") do |response|
+    p response.n_hits # => 1
+  end
+  p :here # => :here then ↑
+  sleep(0.1)
+
+= Asynchronous - wait
+
+  # coderay ruby
+
+  request =
+    client.select(table: "docs",
+                  match_columns: "content",
+                  query: "concat") do |response|
+    p response.n_hits # => 1
+  end
+  p :here # => :here then ↑
+  request.wait
+
+= groonga-client-rails
+
+Ruby on Rails\n
+integration\n
+for\n
+groonga-client
+
+= Architecture
+
+  * Data: RDBMS
+  * Full text search: Groonga
+
+= Define app searcher
+
+  # coderay ruby
+
+  # app/searchers/application_searcher.rb
+  class ApplicationSearcher <
+          Groonga::Client::Searcher
+  end
+
+= Define searcher
+
+  # coderay ruby
+
+  # app/searchers/document_searcher.rb
+  class DocumentsSearcher < ApplicationSearcher
+    # Define a full text search index as "content"
+    schema.column :content, {
+      type: "Text",
+      index: true,
+      index_type: :full_text_search,
+    }
+  end
+
+= Bind to model
+
+  # coderay ruby
+
+  # app/models/document.rb
+  class Document < ApplicationRecord
+    # DocumentsSearcher searches Document model
+    source = DocumentsSearcher.source(self)
+    # Bind Document's "content" column to
+    # DocumentsSearcher's "content" index
+    source.content = :content
+  end
+
+= Search
+
+  # coderay ruby
+
+  # app/controllers/documents_controller.rb
+  class DocumentsController < ApplicationController
+    def index
+      @query = params[:query]
+      searcher = DocumentSearcher.new
+      @result_set = searcher.search.
+         query(@query).
+         result_set
+    end
+  end
+
+= See also
+
+  * Tutorial in Japanese
+    * (('tag:xx-small'))
+      ((<URL:http://www.clear-code.com/blog/2016/12/22.html>))
 
 = Category5
 
