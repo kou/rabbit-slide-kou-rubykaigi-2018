@@ -41,6 +41,10 @@ About 130
 Just I needed\n
 (('note:単に自分が必要だったから'))
 
+= Category1
+
+Web feed
+
 = RSS Parser
 
 RSS/Atom parser\n
@@ -187,6 +191,10 @@ HTML5 support
 
   * Low priority in my activities
   * Do you want to work with me?
+
+= Category2
+
+Presentation
 
 = Rabbit
 
@@ -467,6 +475,10 @@ PDF output
     GLib::Source::CONTINUE
   end
 
+= Category3
+
+Test
+
 = test-unit
 
 Testing framework\n
@@ -568,7 +580,105 @@ RR integration
   stub(adder).add(1, 2) {3}
   adder.add(1, 2) # => 3
 
-= Full text search
+= Category4
 
-= Data processing
+Full text search
+
+= Rroonga
+
+Full text search\n
+((*library*))
+
+= Rroonga - History
+
+  * 2009-05: The first commit
+    * I'm the author
+
+= ((*Library*)) vs Client
+
+  * No server process
+  * Easy to start
+  * Write in Ruby
+
+= Example - Create DB
+
+  # coderay ruby
+  require "groonga"
+
+  Groonga::Database.create(path: "/tmp/db")
+
+= Example - Define schema
+
+  # coderay ruby
+
+  Groonga::Schema.define do |schema|
+    schema.create_table("docs") do |table|
+      # The column to store text
+      table.text("content")
+    end
+    # The index for full text search
+    schema.create_lexicon("terms") do |table|
+      table.index("docs.content")
+    end
+  end
+
+= Example - Add records
+
+  # coderay ruby
+
+  docs = Groonga["docs"]
+  docs.add(content: "String#<< concatenates ...")
+  docs.add(content: "String#dup duplicates ...")
+
+= Example - Search
+
+  # coderay ruby
+
+  matches = docs.select do |record|
+    record.content =~ "concat"
+  end
+  p matches.size # => 1
+  matches.each do |record|
+    p record.content # ""String#<< concat..."
+  end
+
+= Use case - Rurema Search
+
+TODO: Screenshot
+
+https://docs.ruby-lang.org/ja/search/
+
+= Rurema Search
+
+  * Super fast!
+  * Tune for programming document
+    * Symbols (#, @, ...) are important
+
+= Use case - RDoc Search
+
+  * Planning
+  * Do you want to work with me?
+
+= groonga-client
+
+Full text search\n
+((*client*))
+
+= groonga-client - History
+
+  * 2013-01: The first commit
+    * I'm one of authors
+
+= Library vs ((*Client*))
+
+  * Less dependencies
+  * Less resource
+
+= groonga-client - Example
+
+TODO
+
+= Category5
+
+Data processing
 
