@@ -904,17 +904,173 @@ full text search engine
     end
   end
 
-= Ranguba
+= See also
+
+  * Redmine plugin
+    * TODO: Repository URL
+    * TODO: Slide URL
+
+= Ranguba (WIP)
 
 Full text search system
 
-= ...
+= Use cases
 
-= Hypertext
+  * File server search
+  * Mail search
+  * Web site search
 
-...
+= Features
+
+  * Crawlers
+  * Web UI
+  * CLI
+    * Update documents
+    * Search documents
+
+= ChupaText
+
+Text extractor
+
+= Supported formats
+
+  * PDF
+  * Office documents
+    * Word, Excel, OpenDocuments, ...
+  * Mail
+  * ...
+
+= Interface
+
+  * HTTP
+  * Web UI
+  * CLI
+
+= Install
+
+  * Vagrant
+  * Docker
+  * gem install
+
+= Use cases
+
+  * Ranguba
+    * Full text search system
+  * Commit E-mail
 
 = Category5
 
 Data processing
 
+= csv
+
+CSV parser
+
+= csv - History
+
+  * 2003: Import
+  * 2007: Replaced with FasterCSV
+  * 2018: Became a Ruby committer with mrkn
+
+= Why?
+
+  * There are many CSV data
+  * Important to process data
+
+= CSV format problems
+
+  * Slow to parse
+  * Too wild
+
+= Red Arrow
+
+Apache Arrow Ruby
+
+= Red Arrow - History
+
+  * 2017: The first commit
+  * 2018-05: Became the "official" Ruby bindings of Apache Arrow
+
+= Apache Arrow
+
+  * Super fast data format
+  * Cross-language support
+    * Easy to share data with Python, Java, ...
+
+= Red Data Tools
+
+A project to make Ruby data processable
+
+= Red Data Tools - History
+
+  * 2017: Start
+  * 2017: Develop events per month
+
+= Red Datasets
+
+Dataset fetcher
+
+= Red Datasets - History
+
+  * 2017-12: The first commit
+
+= Red Datasets - Example
+
+  # coderay ruby
+
+  require "datasets"
+
+  wikipedia = Datasets::WikiPedia.new
+  wikipedia.each do |page|
+    p page.title
+  end
+
+= Use case: Wikipedia search
+
+  # coderay ruby
+
+  pages = Groonga["pages"]
+  wikipedia = Datasets::WikiPedia.new
+  wikipedia.each do |page|
+    pages.add(title: page.title,
+              content: page.revision.text)
+  end
+  ruby_pages = pages.select do |record|
+    record.match("Ruby")
+  end
+  p ruby_pages.n_hits
+
+= Red OpenCV
+
+...
+
+= Ad: Ruby Data Workshop
+
+TODO
+
+= Process data with Ruby
+
+  * We're working on it
+  * Do you want to work with us?
+
+= How to join 1
+
+  * Chat: TODO
+  * Monthly event: TODO
+
+= How to join 2
+
+  * Hier a developer to work on it
+    * e.g.: mrkn by Speee, Inc.
+
+= How to join 3
+
+  * Give ClearCode works
+  * Join ClearCode to work on it
+
+= Wrap up
+
+  * I'm working on ↓ as a Rubyist
+    * Increase what Ruby can
+    * Maintain libraries
+  * Do you want to work with me?
