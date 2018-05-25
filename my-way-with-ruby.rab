@@ -505,6 +505,10 @@ PDF output
     GLib::Source::CONTINUE
   end
 
+= rcairo - GC
+
+TODO
+
 = Category3
 
 Test
@@ -730,6 +734,10 @@ https://docs.ruby-lang.org/ja/search/
 
 TODO
 
+= Packnga
+
+TODO
+
 = RDoc - i18n
 
 TODO
@@ -750,16 +758,17 @@ Jekyll + i18n
 
 = Usage
 
+  % editor index.md
   % rake
   % editor _po/ja/index.edit.po
   % rake
   % git commit -a
 
-= Use case: PGroonga
+= Use case: Red Data Tools
 
 TODO: screenshot
 
-https://pgroonga.github.io/
+https://red-data-tools.github.io/
 
 = groonga-client
 
@@ -957,6 +966,18 @@ Text extractor
   * Ranguba
     * Full text search system
   * Commit E-mail
+
+= git-commit-mailer
+
+TODO
+
+= commit-email.info
+
+TODO
+
+= ruby-csv
+
+TODO
 
 = Category5
 
