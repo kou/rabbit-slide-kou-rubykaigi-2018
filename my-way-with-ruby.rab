@@ -722,9 +722,44 @@ https://docs.ruby-lang.org/ja/search/
 = Add i18n support
 
   * YARD
-    * Since TODO
+    * Since 0.8.0 at 2012-04
   * RDoc
-    * Since TODO
+    * Since 4.2.0 at 2014-12
+
+= YARD - i18n
+
+TODO
+
+= RDoc - i18n
+
+TODO
+
+= RDoc, Rurema and i18n
+
+  * No progress...
+  * Do you want to work with me?
+
+= jekyll-task-i18n
+
+Jekyll + i18n
+
+= Features
+
+  * Support all markups!
+  * GitHub pages ready!
+
+= Usage
+
+  % rake
+  % editor _po/ja/index.edit.po
+  % rake
+  % git commit -a
+
+= Use case: PGroonga
+
+TODO: screenshot
+
+https://pgroonga.github.io/
 
 = groonga-client
 
@@ -848,6 +883,36 @@ groonga-client
   * Tutorial in Japanese
     * (('tag:xx-small'))
       ((<URL:http://www.clear-code.com/blog/2016/12/22.html>))
+
+= Groonga
+
+mruby embedded\n
+full text search engine
+
+= How to use?
+
+  * Optimizer
+  * Custom command
+
+= Example: Custom command
+
+  # coderay ruby
+
+  module Sharding
+    class LogicalSelectCommand < Groonga::Command
+      # ...
+    end
+  end
+
+= Ranguba
+
+Full text search system
+
+= ...
+
+= Hypertext
+
+...
 
 = Category5
 
