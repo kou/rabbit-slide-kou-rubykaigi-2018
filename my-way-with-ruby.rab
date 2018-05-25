@@ -27,6 +27,24 @@
 : enable-title-on-image
    false
 
+= Keynote-ish topic
+
+Did you think about it?
+
+= Keynote-ish topic1
+
+Future
+
+= Keynote-ish topic2
+
+Focus on\n
+one thing\n
+DEEPLY
+
+= Keynote-ish topic3
+
+Overview
+
 = My activities\nas a Rubyist
 
   * Increase what Ruby can
@@ -40,6 +58,12 @@ About 130
 
 Just I needed\n
 (('note:単に自分が必要だったから'))
+
+= Topic of this talk
+
+Overview\n
+what we can do\n
+((*with Ruby*))
 
 = Category1
 
@@ -351,6 +375,7 @@ at run-time
   * "GI Introduction" (('note:(in Japanese)'))
     * (('tag:xx-small'))
       ((<URL:https://github.com/RubyData/workshop-materials/blob/master/gobject-introspection/introduction.md>))
+    * Build system: Meson + ninja
 
 = Ruby/GI based bindings
 
@@ -663,6 +688,43 @@ https://docs.ruby-lang.org/ja/search/
 
   * Planning
   * Do you want to work with me?
+
+= Rurema and RDoc
+
+  # RT
+
+  Project, Language, Target
+
+  Rurema, Japanese, Japanese Rubyists
+  RDoc, English, All Rubyists
+
+= Resource
+
+  * Shared nothing
+    * Copy based share
+    * e.g.:\n
+      Description,\n
+      Sample codes,\n
+      ...
+
+= To be from my point of view
+
+  * Can we share documents?
+  * How to work together deeply?
+
+= Internationalization: i18n
+
+  * Source: RDoc
+    * For all Rubyists
+  * Translate to Japanese
+    * For Japanese Rubyists
+
+= Add i18n support
+
+  * YARD
+    * Since TODO
+  * RDoc
+    * Since TODO
 
 = groonga-client
 
