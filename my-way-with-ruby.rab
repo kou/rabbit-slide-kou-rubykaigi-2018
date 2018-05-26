@@ -485,7 +485,7 @@ Audio/Video player
 
 (*) Streaming media framework
 
-= Ruby/GStreamer - Example
+= Example - Camera
 
   # coderay ruby
 
@@ -501,7 +501,21 @@ Audio/Video player
   end # Main loop
   pipeline.stop
 
-= Ruby/GStreamer - Example
+= Example - Face detect
+
+  # coderay ruby
+
+  description = [
+    "autovideosrc",  # Camera
+    "videoconvert",  # Filter
+    "facedetect",    # Face detection
+    "videoconvert",  # Filter
+    "autovideosink", # Window
+  ].join(" ! ")
+  pipeline = Gst.parse_launch(description)
+  pipeline.play
+
+= Example - Embed
 
 TODO
 
@@ -941,12 +955,11 @@ Jekyll + i18n
     task.locales = ["ja"]
     task.files = Rake::FileList["**/*.md"]
     task.files -= Rake::FileList["_*/**/*.md"]
-    task.files -= Rake::FileList["README.md"]
     task.locales.each do |locale|
       task.files -= Rake::FileList["#{locale}/**/*.md"]
     end
   end
-  task :default => ["jekyll:i18n:translate"]
+  task default: ["jekyll:i18n:translate"]
 
 = Usage
 
