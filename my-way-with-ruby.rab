@@ -27,104 +27,134 @@
 : enable-title-on-image
    false
 
-= Keynote-ish topic
+= Keynote-ish topic\n(('note:キーノートっぽい話題'))
 
-Did you think about it?
+Did you think about it?\n
+(('note:考えたことある？'))
 
-= Keynote-ish topic1
+= Keynote-ish topic1\n(('note:キーノートっぽい話題1'))
 
-Future
+Future\n
+(('note:未来のこと'))
 
-= Keynote-ish topic2
+= Keynote-ish topic2\n(('note:キーノートっぽい話題2'))
 
 Focus on\n
 one thing\n
-((*deeply*))
+((*deeply*))\n
+(('note:なにかを深掘り'))
 
-= Keynote-ish topic3
+= Keynote-ish topic3\n(('note:キーノートっぽい話題3'))
 
-Overview
+Overview\n
+(('note:俯瞰した話'))
 
-= My activities\nas a Rubyist
+= My activities\nas a Rubyist\n(('note:私のRubyist活動'))
 
-  * Increase what Ruby can
-  * Maintain libraries
+  * Increase what Ruby can\n
+    (('note:Rubyでできることを増やす'))
+  * Maintain libraries\n
+    (('note:ライブラリーのメンテナンス'))
 
-= The number of developing libraries
+= The number of developing libraries\n(('note:開発しているライブラリー数'))
 
-About 130
+About 130\n
+(('note:130くらい'))
 
 = How to find targets?\n(('note:そんなにネタがあるの？'))
 
 Just I needed\n
 (('note:単に自分が必要だったから'))
 
-= Topic of this talk
+= Today's topic\n(('note:今日の話題'))
 
 Overview\n
 what we can do\n
-((*with Ruby*))
+((*with Ruby*))\n
+(('note:Rubyでできるようになったことをたくさん紹介'))
 
-= Category1
+= Category1\n(('note:分類1'))
 
-Web feed
+Web feed\n
+(('note:Webフィード'))
 
 = RSS Parser
 
 RSS/Atom parser\n
 with\n
-((*validation*))
+((*validation*))\n
+(('note:バリデーション機能付きのRSS/Atomパーサー'))
 
-= RSS Parser - History
+= RSS Parser - History\n(('note:歴史'))
 
-  * 2003-05: The first release
-    * No other RSS parser that supports validation even now
-  * 2004-01: Ruby bundles this
-    * Became a Ruby committer
+  * 2003-05: The first release\n
+    (('note:最初のリリース'))
+    * No other RSS/Atom parser that supports validation even now\n
+      (('note:今でもバリデーション付きのパーサーは他にない'))
+  * 2004-01: Ruby bundles this\n
+    (('note:RubyがRSS Parserをバンドル'))
+    * I became a Ruby committer\n
+      (('note:Rubyコミッターになる'))
 
-= Validate RSS/Atom
+= Validate RSS/Atom\n(('note:RSS/Atomのバリデーション'))
 
-  * Important for me
+  * Important for me\n
+    (('note:私にとっては大事'))
   * Most wild RSS/Atom feeds are\n
-    ((*invalid*))
-    * Validation helps to find problems
+    ((*invalid*))\n
+    (('note:野生のRSS/Atomの多くは不正'))
+    * Validation helps to find problems\n
+      (('note:バリデーションがあると問題を見つけやすくなる'))
 
 = RSS::Parser.parse
 
   # coderay ruby
+
   # Validates by default
+  # デフォルトでバリデーション
   RSS::Parser.parse(rss)
   # Validation can be disabled
+  # 無効にできる
   RSS::Parser.parse(rss, false)
 
-= Since Ruby 2.6
+= Since Ruby 2.6\n(('note:Ruby 2.6以降'))
 
   # coderay ruby
+
   # Supports keyword argument
+  # キーワード引数対応
   parse(rss, validate: false)
 
 = REXML
 
 XML parser\n
 written in\n
-((*pure Ruby*))
+((*pure Ruby*))\n
+(('note:Ruby実装のXMLパーサー'))
 
-= REXML - History
+= REXML - History\n(('note:歴史'))
 
   * 2001: Started by Sean Russell\n
-    (('note:書運さんが開発を開始'))
-    * Based on Electric XML (Java)
-    * REXML is "Ruby Electric XML"
-  * 2003-01: Ruby bundles this
+    (('note:Seanさんが開発を開始'))
+    * Based on Electric XML (Java)\n
+      (('note:Java実装のElectric XMLを参考に開発'))
+    * REXML is "Ruby Electric XML"\n
+      (('note:REXMLは「Ruby Electric XML」'))
+  * 2003-01: Ruby bundles this\n
+    (('note:RubyがREXMLをバンドル'))
 
-= REXML - Side story
+= REXML - Side story\n(('note:おまけ話'))
 
-  * Sean Russel has Kanji notation "書運"
-  * Most non Japanese who I contacted were interested in Japan
-    * How to write your name in Kanji?
-  * We can connect with Ruby!
+  * Sean is "書運" in Kanji\n
+    (('note:Seanさんには「書運」という漢字表記があった'))
+  * He was interested in Japan\n
+    (('note:日本好きだった'))
+    * "How to write your name in Kanji?"\n
+      (('note:「君の名前は漢字でどう書くの？」'))
+  * We can connect with Ruby!\n
+    (('note:RubyistはRubyをきっかけにつながれる！'))
 
-= Ad: Code Party
+= Ad: Code Party\n(('note:宣伝：コード懇親会'))
 
   # img
   # src = images/code-party.png
@@ -136,55 +166,73 @@ written in\n
 : enable-title-on-image
    false
 
-= Ad: Code Party
+= Ad: Code Party\n(('note:宣伝：コード懇親会'))
 
 (('tag:center'))
-This is a challenge
+This is a challenge\n
+(('note:実験的な企画'))
 
-  * Ruby focus to have fun
-  * We have fun writing Ruby
-  * We have fun together with writing Ruby at after party!?
+  * Ruby focus to have fun\n
+    (('note:Rubyは楽しさを大事にしている'))
+  * We have fun writing Ruby\n
+    (('note:Rubyistは楽しくRubyを書いている'))
+  * We have fun together with writing Ruby at after party!?\n
+    (('note:だったら懇親会で一緒にRubyを書くと楽しそう！？'))
 
-= Ad: Code Party
+= Ad: Code Party\n(('note:宣伝：コード懇親会'))
 
-  * Matz attends Code Party
-  * Sponsored by Speee, Inc.
+  * Matz attends Code Party\n
+    (('note:まつもとさんもコード懇親会に参加'))
+  * Sponsored by Speee, Inc.\n
+    (('note:Speeeさんがスポンサー'))
 
-= REXML - Recent1
+= REXML - Recent1\n(('note:最近1'))
 
   * 2010-08: RubyKaigi 2010
-    * I became the maintainer
-    * Because RSS Parser uses it
+    * I became the maintainer\n
+      (('note:私がメンテナーになった'))
+    * Because RSS Parser uses it\n
+      (('note:RSS Parserが使っているから'))
 
-= REXML - Recent2
+= REXML - Recent2\n(('note:最近2'))
 
   * 2016: (({element[attribute_name]}))
-    * Ruby 2.5 ships it
+    * Ruby 2.5 ships it\n
+      (('note:Ruby 2.5以降で使える'))
 
-= REXML - Recent3
+= REXML - Recent3\n(('note:最近3'))
 
-  * 2018: Fix XPath related bugs
-    * Ruby 2.6 ships it
+  * 2018: Fix XPath related bugs\n
+    (('note:XPath関連のバグ修正'))
+    * Ruby 2.6 ships it\n
+      (('note:Ruby 2.6以降で使える'))
 
-= REXML - Future?
+= REXML - Future?\n(('note:未来はあるの？'))
 
-  * ((*Pure Ruby*)) is valuable
-    * Easy to install
+  * ((*Pure Ruby*)) is valuable\n
+    (('note:Rubyだけで書かれていることには価値がある'))
+    * Easy to install\n
+      (('note:インストールが簡単'))
     * JIT may improve performance\n
-      (('note:NOTE: We should improve general logic before we expect JIT to improve performance😉'))
+      (('note:NOTE: We should improve general logic before we expect JIT to improve performance😉'))\n
+      (('note:JITで速くなるかもしれない'))\n
+      (('note:JITの前に普通にロジックを改良するのが先だけどね😉'))\n
 
-= Recent my works
+= Recent my works\n(('note:最近の仕事'))
 
-  * XML/HTML libraries for LuaJIT
+  * XML/HTML libraries for LuaJIT\n
+    (('note:LuaJIT用のXML/HTMLライブラリー'))
     * XMLua: (('tag:x-small:((<URL:https://clear-code.github.io/xmlua/>))'))\n
       libxml2 based XML/HTML parser
     * LuaCS: (('tag:x-small:((<URL:https://clear-code.github.io/luacs/>))'))\n
       CSS Selectors→XPath converter
-  * Found what lacks in REXML API
+  * Found what lacks in REXML API\n
+    (('note:REXMLのAPIに足りないものはなにか考えた'))
 
-= REXML - Future1
+= REXML - Future1\n(('note:機能1'))
 
-Introduce NodeSet
+Introduce NodeSet\n
+(('note:NodeSetが足りないんじゃないか'))
 
 = REXML - NodeSet
 
@@ -193,20 +241,22 @@ Introduce NodeSet
     search("//item"). # => NodeSet
     text # All texts in <item>
 
-= REXML - Future2
+= REXML - Future2\n(('note:機能2'))
 
 Support\n
-CSS Selectors
+CSS Selectors\n
+(('note:CSSセレクターが足りないんじゃないか'))
 
-= REXML - CSS Selectors
+= REXML - CSS Selectors\n(('note:CSSセレクター'))
 
   # coderay ruby
   doc.css_select("ul li, dl dt")
 
-= REXML - Future3
+= REXML - Future3\n(('note:機能3'))
 
 Support\n
-HTML5 support
+HTML5 support\n
+(('note:HTML5対応が足りないんじゃないか'))
 
 = REXML - HTML5
 
@@ -216,54 +266,67 @@ HTML5 support
   doc.search("//li")
   doc.css_select("ul li")
 
-= REXML - Future
+= REXML - Future\n(('note:未来'))
 
-  * Low priority in my activities
-  * Do you want to work with me?
+  * Low priority in my activities\n
+    (('note:優先度は高くない'))
+  * Do you want to work with me?\n
+    (('note:一緒にやりたい人はいる？'))
 
-= Category2
+= Category2\n(('note:分類1'))
 
-Presentation
+Presentation\n
+(('note:プレゼンテーション'))
 
 = Rabbit
 
 (('tag:center'))
 (('tag:large'))
 Presentation tool\n
-for ((*Rubyist*))
+for ((*Rubyist*))\n
+(('note:Rubyist用のプレゼンツール'))
 
 ((' '))
 
-= Rabbit - History
+= Rabbit - History\n(('note:歴史'))
 
-  * 2004-07: The first release
-    * No other presentation tool for Rubyist even now
-  * 2010: Matz migrated to Rabbit
-    * Since RubyKaigi 2010?
+  * 2004-07: The first release\n
+    (('note:最初のリリース'))
+    * No other presentation tool for Rubyist even now\n
+      (('note:今でもRubyist用のプレゼンツールは他にない'))
+  * 2010: Matz migrated to Rabbit\n
+    (('note:まつもとさんがRabbitに乗り換えた'))
+    * Since RubyKaigi 2010?\n
+      (('note:RubyKaigi 2010から？'))
 
-= For Rubyist?
+= For Rubyist?\n(('note:Rubyist向けに必要なもの'))
 
-RD support
+RD support\n
+(('note:RDサポート'))
 
 = RD
 
-  * A text based markup language
-    * Version controllable
+  * A text based markup language\n
+    (('note:テキストベースのマークアップ言語'))
+    * Version controllable\n
+      (('note:バージョン管理できる'))
   * Designed by Matz\n
-    (('note:(Right?)'))
+    (('note:(Right?)'))\n
+    (('note:まつもとさんがデザインしたはず'))
 
-= For Rubyist?
+= For Rubyist?\n(('note:Rubyist向けに必要なもの'))
 
 Publish\n
 our slides\n
-as usual
+as usual\n
+(('note:いつも通りスライドを公開できる'))
 
-= Publish as usual
+= Publish as usual\n(('note:いつも通り公開'))
 
   # coderay console
   % gem push your-slide-1.0.gem
 
-= Published!
+= Published!\n(('note:公開完了！'))
 
   # img
   # src = images/rabbit-slide-show.png
@@ -273,22 +336,24 @@ as usual
 (('tag:small'))
 ((<URL:https://slide.rabbit-shocker.org/>))
 
-= What's needed for presentation tool?
+= What's needed for presentation tool?\n(('note:プレゼンツールに必要なもの'))
 
 GUI
 
 = Ruby/GTK3
 
-Multi-platform GUI toolkit
+Multi-platform GUI toolkit\n
+(('note:複数プラットフォーム対応GUIツールキット'))
 
-= Ruby/GTK3 - History
+= Ruby/GTK3 - History\n(('note:歴史'))
 
   * 1998-01: 1st release by Matz\n
-    ((<[ruby-list:5877]|URL:http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5877>))
-  * 2004-05: I joined development
-  * 2018-05: The latest release
+    ((<[ruby-list:5877]|URL:http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5877>))\n
+    (('note:まつもとさんが最初のリリース'))
+  * 2004-05: I joined development\n
+    (('note:私が開発に参加'))
 
-= Ruby/GTK3 - Example
+= Example - Window
 
   # coderay ruby
   require "gtk3"
@@ -299,36 +364,48 @@ Multi-platform GUI toolkit
   end
   app.run
 
-= Approaches on\nmissing libraries(1)
+= Approaches on\nmissing libraries(1)\n(('note:ライブラリーがない時のやり方（1）'))
 
-  (1) Implement only the needed features
-  (2) then back to Rabbit
+  (1) Implement only the needed features\n
+      (('note:必要な機能だけ実装'))
+  (2) then back to Rabbit\n
+      (('note:必要な機能ができたらRabbitに戻る'))
 
-= Approaches on\nmissing libraries(2)
+= Approaches on\nmissing libraries(2)\n(('note:ライブラリーがない時のやり方（2）'))
 
-  (1) Implement not only the needed features
-  (2) but also (('note:almost')) all features
-  (3) then back to Rabbit
+  (1) Implement not only the needed features\n
+      (('note:必要な機能だけじゃなく'))
+  (2) but also (('note:almost')) all features\n
+      (('note:ほぼすべての機能を実装'))
+  (3) then back to Rabbit\n
+      (('note:終わったらRabbitに戻る'))
 
-= My approach
+= My approach\n(('note:私のやり方'))
 
-Implement all features\n
-(('note:testing with Rabbit'))
+Implement\n
+all features\n
+(('note:testing with Rabbit'))\n
+(('note:すべての機能を実装'))
 
-= My priority
+= My priority\n(('note:私の優先度'))
 
-  * Rabbit is important
-  * Increasing what Ruby can is also important
+  * Rabbit is important\n
+    (('note:Rabbitは大事だけど'))
+  * Increasing what Ruby can is also important\n
+    (('note:Rubyでできることを増やすのも大事'))
 
-= GTK+ 3 - Size
+= GTK+ 3 - Size\n(('note:サイズ'))
 
-3000 over API
+3000 over API\n
+(('note:3000以上のAPI'))
 
-= How to implement
+= How to implement\n(('note:実装方法'))
 
 Handwriting\n
+(('note:手書き'))\n
 ↓\n
-Auto generation
+Auto generation\n
+(('note:自動生成'))
 
 = Ruby/GI
 
@@ -336,16 +413,19 @@ Auto generation
 (('tag:large'))
 Generate bindings\n
 automatically\n
-at run-time
+at run-time\n
+(('note:実行時に自動でバインディングを生成'))
 
 (('note:GI: GObject Introspection'))
 
-= Ruby/GI - History
+= Ruby/GI - History\n(('note:歴史'))
 
-  * 2012: The first commit by me
-  * 2014: Ruby/GTK3 used Ruby/GI
+  * 2012: The first commit by me\n
+    (('note:最初のコミット'))
+  * 2014: Ruby/GTK3 used Ruby/GI\n
+    (('note:Ruby/GTK3をRuby/GIベースに移行'))
 
-= Handwriting
+= Handwriting\n(('note:手書き'))
 
   # img
   # src = images/ruby-gtk3-without-ruby-gi.svg
@@ -356,7 +436,7 @@ at run-time
 : enable-title-on-image
    false
 
-= Auto generation
+= Auto generation\n(('note:自動生成'))
 
   # img
   # src = images/ruby-gtk3-with-ruby-gi.svg
@@ -367,39 +447,45 @@ at run-time
 : enable-title-on-image
    false
 
-= Ruby/GI - See also
+= Ruby/GI - See also\n(('note:参考情報'))
 
-  * "How to create bindings 2016" at RubyKaigi 2016
+  * "How to create bindings 2016" at RubyKaigi 2016\n
     * (('tag:xx-small'))
       ((<URL:http://rubykaigi.org/2016/presentations/ktou.html>))
-  * "GI Introduction" (('note:(in Japanese)'))
+  * "GI Introduction" (('note:(in Japanese)'))\n
+    (('note:「GObject Introspection入門」'))
     * (('tag:xx-small'))
       ((<URL:https://github.com/RubyData/workshop-materials/blob/master/gobject-introspection/introduction.md>))
-    * Build system: Meson + ninja
+    * Build system: Meson + Ninja\n
+      (('note:ビルドシステム：Meson + Ninja'))
 
-= Ruby/GI based bindings
+= Ruby/GI based bindings\n(('note:Ruby/GIベースのバインディング'))
 
 Ruby/Pango
 
 = Ruby/Pango
 
-Text layout engine with\n
-i18n support
+(('tag:center'))
+(('tag:large'))
+Text layout engine\n
+with\n
+i18n support\n
+(('note:国際化対応のテキストレイアウトエンジン'))
 
 (('note:i18n: Internationalization'))
 
-= Ruby/Pango - Example
+= Prohibition processing\n(('note:禁則処理'))
 
   # coderay ruby
 
   window.signal_connect(:draw) do |_, context|
     layout = context.create_pango_layout
-    layout.text = "Helloこんにちは🍣"
+    layout.text = "Helloこんにちは。🍣"
     context.show_pango_layout(layout)
     GLib::Source::CONTINUE
   end
 
-= Ruby/Pango - Example
+= Bidirectional text\n(('note:双方向テキスト'))
 
 Hello
 
@@ -407,15 +493,16 @@ Hello
 
 こんにちは
 
-= Ruby/GI based bindings
+= Ruby/GI based bindings\n(('note:Ruby/GIベースのバインディング'))
 
 Ruby/GdkPixbuf2
 
 = Ruby/GdkPixbuf2
 
-Image manipulation
+Image manipulation\n
+(('note:画像操作'))
 
-= Ruby/GdkPixbuf2 - Example
+= Half image\n(('note:画像を半分に'))
 
   # coderay ruby
 
@@ -429,7 +516,7 @@ Image manipulation
   # Save as different format
   half.save("half.jpg")
 
-= Ruby/GdkPixbuf2 - Example
+= Animation GIF\n(('note:アニメーションGIF'))
 
   # img
   # src = images/the-tortoise-and-the-hare.gif
@@ -440,26 +527,27 @@ Image manipulation
 : enable-title-on-image
    false
 
-= Ruby/GI based bindings
+= Ruby/GI based bindings\n(('note:Ruby/GIベースのバインディング'))
 
 Ruby/Poppler
 
 = Ruby/Poppler
 
 PDF\n
-parser/renderer
+parser/renderer\n
+(('note:PDFパーサー・レンダラー'))
 
-= Ruby/Poppler - Example
+= Text extraction\n(('note:テキスト抽出'))
 
   # coderay ruby
 
   require "poppler"
   doc = Poppler::Document.new("x.pdf")
   doc.each do |page|
-    puts page.text # Extract all texts
+    puts(page.text) # Extract all texts
   end
 
-= Ruby/Poppler - Example
+= Embed PDF\n(('note:PDFの埋め込み'))
 
   # image
   # src = images/rubykaigi-2017-extension-by-cpp-title.pdf
@@ -475,17 +563,21 @@ parser/renderer
 : enable-title-on-image
    false
 
-= Ruby/GI based bindings
+= Ruby/GI based bindings\n(('note:Ruby/GIベースのバインディング'))
 
 Ruby/GStreamer
 
 = Ruby/GStreamer
 
-Audio/Video player
+(('tag:center'))
+(('tag:large'))
+Audio/Video player\n
+(('note:音声・動画プレイヤー'))
 
-(*) Streaming media framework
+(('note:(*) Streaming media framework'))\n
+(('note:本当はストリーミングメディアフレームワーク'))
 
-= Example - Camera
+= Camera(('note:（カメラ）'))
 
   # coderay ruby
 
@@ -501,52 +593,56 @@ Audio/Video player
   end # Main loop
   pipeline.stop
 
-= Example - Face detect
+= Face detection\n(('note:顔認識'))
 
   # coderay ruby
 
   description = [
     "autovideosrc",  # Camera
     "videoconvert",  # Filter
-    "facedetect",    # Face detection
-    "videoconvert",  # Filter
+    "facedetect",    # Face detection (!)
+    "videoconvert",  # Filter         (!)
     "autovideosink", # Window
   ].join(" ! ")
   pipeline = Gst.parse_launch(description)
   pipeline.play
 
-= Example - Embed
+= Embed video
 
 TODO
 
 #  # video
 #  # src = test.mp4
 
-= What's needed for presentation tool?
+= What's needed for presentation tool?\n(('note:プレゼンツールに必要なもの'))
 
-PDF output
+PDF output\n
+(('note:PDF出力'))
 
 = rcairo
 
-2D graphics renderer
+2D graphics renderer\n
+(('note:2次元画像レンダラー'))
 
-= rcairo - Outputs
+= rcairo - Outputs\n(('note:出力'))
 
-  * PNG
+  * PNG・SVG
   * ((*PDF*))
-  * SVG
   * ((*Display*)) (X/macOS/Windows)
   * ...
 
-= rcairo - History
+= rcairo - History\n(('note:歴史'))
 
-  * 2003-10: The initial commit
-  * 2005-09: I started developing
+  * 2003-10: The initial commit\n
+    (('note:最初のコミット'))
+  * 2005-09: I started developing\n
+    (('note:私が開発に参加'))
     * Sent several patches and\n
-      got commit bit and more
+      got commit bit and more\n
+      (('note:パッチを投げてコミット権とかをもらった'))
   * 2005-10: 1.0.0
 
-= Example - Red A4 PDF
+= Red A4 PDF\n(('note:赤いA4のPDFを出力'))
 
   # coderay ruby
 
@@ -576,7 +672,7 @@ PDF output
 
 (('tag:margin-bottom * 20'))
 
-= GC - Cause
+= GC - Cause(('note:（原因）'))
 
     # image
     # src = images/cairo-no-gc-trigger.pdf
@@ -586,12 +682,14 @@ PDF output
     # relative_padding_right = -11
     # relative_padding_bottom = -10
 
-  * GC isn't ran enough frequency
-    * Because Ruby doesn't know how many memory used by cairo
+  * GC isn't ran enough frequency\n
+    (('note:GCの実行頻度が十分じゃなかった'))
+    * Because Ruby doesn't know how many memory used by cairo\n
+      (('note:Rubyはcairoのメモリー使用量を知らないから'))
 
-(('tag:margin-bottom * 18'))
+(('tag:margin-bottom * 16'))
 
-= GC - Fix
+= GC - Fix(('note:（修正）'))
 
     # image
     # src = images/cairo-gc-trigger.pdf
@@ -602,40 +700,98 @@ PDF output
     # relative_padding_bottom = -10
 
   * (({rb_gc_adjust_memory_usage()}))
-    * Improve GC frequency
-  * Ruby 2.4 ships it
+    * Improve GC frequency(('note:（GC実行頻度を改善）'))
+  * Ruby 2.4 ships it(('note:（Ruby 2.4以降）'))
 
 (('tag:margin-bottom * 18'))
 
-= Category3
+= Easy to install\n(('note:簡単インストール'))
 
-Test
+Important\n
+(('note:大事'))
+
+= native-package-installer
+
+Install\n
+system packages\n
+on (({gem install}))\n
+(('note:gem install時にシステムのパッケージをインストール'))
+
+= extconf.rb/Rakefile
+
+  # coderay ruby
+
+  require "pkg-config"
+  require "native-package-installer"
+  unless PKGConfig.check_version?("gdk-3.0")
+    packages = {
+      altlinux: "libgtk+3-devel",
+      debian: "libgtk-3-dev",
+      redhat: "pkgconfig(gdk-3.0)",
+      homebrew: "gtk+3",
+      macports: "gtk3",
+      msys2: "gtk3",
+    }
+    unless NativePackageInstaller.install(packages)
+      exit(false)
+    end
+  end
+
+= rake-compiler
+
+Build fat gem\n
+by\n
+cross compile\n
+(('note:クロスコンパイルでfat gemをビルド'))
+
+= rake-compiler - History\n(('note:歴史'))
+
+  * 2008-11: The first commit\n
+    (('note:最初のコミット'))
+  * 2014-12: Orphan\n
+    (('note:だれかメンテナー変わってー'))
+  * 2014-12:\n
+    I became the maintainer\n
+    (('note:私がメンテナーになった'))
+
+= Category3\n(('note:分類3'))
+
+Test\n
+(('note:テスト'))
 
 = test-unit
 
 Testing framework\n
 to write tests\n
-((*in Ruby*))
+((*in Ruby*))\n
+(('note:Rubyでテストを書けるテスティングフレームワーク'))
 
-= test-unit - History
+= test-unit - History\n(('note:歴史'))
 
-  * 2003-02: Import to Ruby
-  * 2008-05: I became a maintainer
-  * 2008-10: Removed from Ruby
+  * 2003-02: Import to Ruby\n
+    (('note:Rubyに取り込まれる'))
+  * 2008-05:\n
+    I became the maintainer\n
+    (('note:私がメンテナーになった'))
+  * 2008-10: Removed from Ruby\n
+    (('note:Rubyから削除'))
 
 (('note:See also: "The history of testing framework in Ruby"'))\n
 (('tag:x-small'))((<URL:http://rubykaigi.org/2015/presentations/kou>))
 
-= test-unit - New feature
+= test-unit - New feature\n(('note:新機能'))
 
-Grouping
+Grouping\n
+(('note:グループ化'))
 
-= Grouping
+= Grouping\n(('note:グループ化'))
 
-  * The most important feature
-  * Keep tests maintainable
+  * The most important feature\n
+    (('note:一番大事な機能'))
+  * Keep tests maintainable\n
+    (('note:メンテナンスできるテストを維持できる'))
 
-= Grouping - Example
+= Example(('note:（例）'))
 
   # coderay ruby
 
@@ -648,7 +804,7 @@ Grouping
     end
   end
 
-= Grouping - Method style
+= Method style(('note:（メソッド形式）'))
 
   # coderay ruby
 
@@ -661,11 +817,12 @@ Grouping
     end
   end
 
-= test-unit - New feature
+= test-unit - New feature\n(('note:新機能'))
 
-Data driven test
+Data driven test\n
+(('note:データ駆動テスト'))
 
-= Data driven test
+= Data driven test\n(('note:データ駆動テスト'))
 
   # coderay ruby
 
@@ -677,30 +834,39 @@ Data driven test
                  add(augend, addend))
   end
 
-= test-unit - New feature
+= test-unit - New feature\n(('note:新機能'))
 
-Reverse backtrace
+Reverse backtrace\n
+(('note:逆順のバックトレース'))
 
-= Reverse backtrace
+= Reverse backtrace\n(('note:逆順のバックトレース'))
 
-  * Reverse backtrace only when terminal output
-  * The same change as Ruby 2.5.0
+  * Reverse backtrace only when terminal output\n
+    (('note:ターミなリュ出力のときだけ逆順'))
+  * The same change as Ruby 2.5.0\n
+    (('note:Ruby 2.5.0と同じ変更'))
 
-= test-unit - New feature
+= test-unit - New feature\n(('note:新機能'))
 
-Test double
+Test double\n
+(('note:テストダブル'))
 
 = test-unit-rr
 
-RR integration
+RR integration\n
+(('note:RRとの統合'))
 
-= RR - History
+= RR - History\n(('note:歴史'))
 
-  * 2007-06: The initial commit
-  * 2014-12: Orphan
-  * 2015-05: I became a maintainer
+  * 2007-06: The initial commit\n
+    (('note:最初のコミット'))
+  * 2014-12: Orphan\n
+    (('note:だれかメンテナー変わってー'))
+  * 2015-05:\n
+    I became the maintainer\n
+    (('note:私がメンテナーになった'))
 
-= RR - Example
+= Stub(('note:（スタブ）'))
 
   # coderay ruby
 
@@ -709,34 +875,41 @@ RR integration
   stub(adder).add(1, 2) {3}
   adder.add(1, 2) # => 3
 
-= Category4
+= Category4\n(('note:分類4'))
 
-Full text search
+Full text search\n
+(('note:全文検索'))
 
 = Rroonga
 
 Full text search\n
-((*library*))
+((*library*))\n
+(('note:全文検索ライブラリー'))
 
-= Rroonga - History
+= Rroonga - History\n(('note:歴史'))
 
-  * 2009-05: The first commit
-    * I'm the author
+  * 2009-05: The first commit\n
+    (('note:最初のコミット'))
+    * I'm the author\n
+      (('note:私が作者'))
 
-= ((*Library*)) vs Client
+= ((*Library*)) vs Client\n(('note:ライブラリー対クライアント'))
 
-  * No server process
-  * Easy to start
-  * Write in Ruby
+  * No server process\n
+    (('note:サーバープロセスがいらない'))
+  * Easy to start\n
+    (('note:簡単に使い始められる'))
+  * Write in Ruby\n
+    (('note:Rubyで書ける'))
 
-= Example - Create DB
+= Create DB(('note:（データベース作成）'))
 
   # coderay ruby
   require "groonga"
 
   Groonga::Database.create(path: "/tmp/db")
 
-= Example - Define schema
+= Define schema(('note:（スキーマ定義）'))
 
   # coderay ruby
 
@@ -751,7 +924,7 @@ Full text search\n
     end
   end
 
-= Example - Add records
+= Add records(('note:（レコード追加）'))
 
   # coderay ruby
 
@@ -759,7 +932,7 @@ Full text search\n
   docs.add(content: "String#<< concatenates ...")
   docs.add(content: "String#dup duplicates ...")
 
-= Example - Search
+= Search(('note:（検索）'))
 
   # coderay ruby
 
@@ -771,7 +944,7 @@ Full text search\n
     p record.content # => "String#<< concat..."
   end
 
-= Use case - Rabbit Slide Show
+= User - Rabbit Slide Show
 
   # img
   # src = images/rabbit-slide-show.png
@@ -781,22 +954,31 @@ Full text search\n
 (('tag:small'))
 ((<URL:https://slide.rabbit-shocker.org/>))
 
-= Use case - Rurema Search
+= User - Rurema Search
 
-TODO: Screenshot
+  # img
+  # src = images/rurema-search.png
+  # relative_height = 78
 
-https://docs.ruby-lang.org/ja/search/
+(('tag:center'))
+(('tag:small'))
+((<URL:https://docs.ruby-lang.org/ja/search/>))
 
-= Rurema Search
+= Rurema Search\n(('note:るりまサーチ'))
 
-  * Super fast!
-  * Tune for programming document
-    * Symbols (#, @, ...) are important
+  * Super fast!\n
+    (('note:すごく速い！'))
+  * Tune for programming document\n
+    (('note:プログラミングのドキュメント用にチューニング'))
+    * Symbols (@, #, ...) are important\n
+      (('note:@とか#とかの記号も大事'))
 
-= Use case - RDoc Search
+= User - RDoc Search
 
-  * Planning
-  * Do you want to work with me?
+  * Planning\n
+    (('note:考えてはいるけど。。。'))
+  * Do you want to work with me?\n
+    (('note:一緒にやりたい人はいる？'))
 
 = Rurema and RDoc
 
@@ -807,28 +989,37 @@ https://docs.ruby-lang.org/ja/search/
   Rurema, Japanese, Japanese Rubyists
   RDoc, English, All Rubyists
 
-= Source
+= Source\n(('note:ソース'))
 
-  * Shared nothing
-    * Copy based share
+  * Shared nothing\n
+    (('note:共有していない'))
+    * Copy based share\n
+      (('note:共有するときはコピー'))
     * e.g.:\n
       Description,\n
       Sample codes,\n
-      ...
+      ...\n
+      (('note:例：説明やサンプルコードなどをコピー'))
 
-= To be from my point of view
+= From my point of view\n(('note:私が思うこと'))
 
-  * Can we share documents?
-  * How to work together deeply?
+  * Can we share documents?\n
+    (('note:ドキュメントを共有できないかな'))
+  * How to work together deeply?\n
+    (('note:もっと協力してできないかな'))
 
-= Internationalization: i18n
+= I18n\n(('note:国際化'))
 
-  * Source: RDoc
-    * For all Rubyists
-  * Translate to Japanese
-    * For Japanese Rubyists
+  * Source: RDoc\n
+    (('note:ソースはRDoc'))
+    * For all Rubyists\n
+      (('note:これは全Rubyist向け'))
+  * Translate to Japanese\n
+    (('note:RDocのドキュメントを日本語に翻訳'))
+    * For Japanese Rubyists\n
+      (('note:これは日本人Rubyist向け'))
 
-= Add i18n support
+= Add i18n support\n(('note:国際化サポートを追加'))
 
   * YARD
     * Since 0.8.0 at 2012-04
@@ -840,6 +1031,7 @@ https://docs.ruby-lang.org/ja/search/
   # coderay console
 
   # Generates po/yard.pot
+  # po/yard.potを生成
   % yard i18n
 
 = YARD - i18n
@@ -847,6 +1039,7 @@ https://docs.ruby-lang.org/ja/search/
   # coderay console
 
   # Create po/ja.po from po/yard.pot
+  # po/yard.potからpo/ja.poを作成
   % msginit \
       --locale=ja_JP.UTF-8 \
       --input=po/yard.pot \
@@ -857,6 +1050,7 @@ https://docs.ruby-lang.org/ja/search/
   # coderay console
 
   # Translate messages in po/ja.po
+  # po/ja.po内のメッセージを翻訳
   % editor po/ja.po
 
 = YARD - i18n
@@ -865,13 +1059,18 @@ https://docs.ruby-lang.org/ja/search/
 
   # Generate documents with
   # translated messages
+  # 翻訳したメッセージを使って
+  # ドキュメント生成
   % yard --locale ja
 
 = Packnga
 
-Rake task for YARD i18n
+Rake task\n
+for\n
+YARD i18n\n
+(('note:YARDの国際化機能向けのRakeタスク'))
 
-= Packnga - Example
+= Setting\n(('note:設定'))
 
   # coderay ruby
 
@@ -882,26 +1081,29 @@ Rake task for YARD i18n
     task.translate_languages = ["ja"]
   end
 
-= Packnga - Example
+= Workflow\n(('note:ワークフロー'))
 
   # coderay console
 
   % rake reference:translate
   % editor doc/po/ja/x.edit.po
   % rake reference:translate
-  % editor doc/po/ja/x.edit.po
+  % editor lib/x.rb
+  % rake reference:translate
   ...
 
-= Packnga - See also
+= Users\n(('note:ユーザー'))
 
   * test-unit
-    * A real world user
+  * Rroonga
+  * ...
 
 = RDoc - i18n
 
   # coderay console
 
   # Generates doc/rdoc.pot
+  # doc/rdoc.potを生成
   % rdoc --format=pot
 
 = RDoc - i18n
@@ -910,6 +1112,7 @@ Rake task for YARD i18n
 
   # Create locale/ja.po
   # from doc/rdoc.pot
+  # doc/rdoc.potからlocale/ja.poを作成
   % mkdir -p locale
   % msginit \
       --locale=ja_JP.UTF-8 \
@@ -920,7 +1123,8 @@ Rake task for YARD i18n
 
   # coderay console
 
-  # Translate messages in po/ja.po
+  # Translate messages in locale/ja.po
+  # locale/ja.po内のメッセージを翻訳
   % editor locale/ja.po
 
 = RDoc - i18n
@@ -929,23 +1133,29 @@ Rake task for YARD i18n
 
   # Generate documents with
   # translated messages
+  # 翻訳したメッセージを使って
+  # ドキュメント生成
   % rdoc --locale ja
 
 = RDoc, Rurema and i18n
 
-  * No progress...
-  * Do you want to work with me?
+  * No progress...\n
+    (('note:ツールの整備まででそれ以降は進んでいない。。。'))
+  * Do you want to work with me?\n
+    (('note:一緒にやりたい人はいる？'))
 
 = jekyll-task-i18n
 
 Jekyll + i18n
 
-= Features
+= Features\n(('note:機能'))
 
-  * Support all markups!
-  * GitHub pages ready!
+  * Support all markups!\n
+    (('note:すべてのマークアップ対応！'))
+  * GitHub Pages ready!\n
+    (('note:GitHub Pagesでも使える！'))
 
-= Usage
+= Setting(('note:（設定）'))
 
   # coderay ruby
 
@@ -961,7 +1171,7 @@ Jekyll + i18n
   end
   task default: ["jekyll:i18n:translate"]
 
-= Usage
+= Workflow(('note:（ワークフロー）'))
 
   % editor index.md
   % rake
@@ -969,28 +1179,30 @@ Jekyll + i18n
   % rake
   % git commit -a
 
-= Use case: Red Data Tools
+= User - Red Data Tools
 
-TODO: screenshot
+  # img
+  # src = images/jekyll-task-i18n-red-data-tools.gif
+  # relative_height = 78
 
-https://red-data-tools.github.io/
+(('tag:center'))
+(('tag:small'))
+((<URL:https://red-data-tools.github.io/>))
 
 = groonga-client
 
 Full text search\n
-((*client*))
+((*client*))\n
+(('note:全文検索クライアント'))
 
-= groonga-client - History
+= Library vs ((*Client*))\n(('note:ライブラリー対クライアント'))
 
-  * 2013-01: The first commit
-    * I'm one of authors
+  * Less dependencies\n
+    (('note:依存関係が少ない'))
+  * Less needed resource\n
+    (('note:必要なリソースが少ない'))
 
-= Library vs ((*Client*))
-
-  * Less dependencies
-  * Less resource
-
-= groonga-client - Example
+= Search(('note:（検索）'))
 
   # coderay ruby
 
@@ -1004,13 +1216,14 @@ Full text search\n
     p response.n_hits # => 1
   end
 
-= Asynchronous
+= Asynchronous(('note:（非同期）'))
 
   # coderay ruby
 
+  # Call with block
   client.select(table: "docs",
                 match_columns: "content",
-                query: "concat") do |response|
+                query: "concat") do |response|  
     p response.n_hits # => 1
   end
   p :here # => :here then ↑
@@ -1034,14 +1247,17 @@ Full text search\n
 Ruby on Rails\n
 integration\n
 for\n
-groonga-client
+groonga-client\n
+(('note:Ruby on Railsで使う'))
 
-= Architecture
+= Architecture\n(('note:アーキテクチャー'))
 
-  * Data: RDBMS
-  * Full text search: Groonga
+  * Data: RDBMS\n
+    (('note:データはRDBMSに格納'))
+  * Full text search: Groonga\n
+    (('note:全文検索はGroongaで処理'))
 
-= Define app searcher
+= Define app searcher\n(('note:アプリ用サーチャーを定義'))
 
   # coderay ruby
 
@@ -1050,13 +1266,14 @@ groonga-client
           Groonga::Client::Searcher
   end
 
-= Define searcher
+= Define searcher\n(('note:サーチャーを定義'))
 
   # coderay ruby
 
   # app/searchers/document_searcher.rb
   class DocumentsSearcher < ApplicationSearcher
     # Define a full text search index as "content"
+    # 全文検索用のインデックスを定義
     schema.column :content, {
       type: "Text",
       index: true,
@@ -1064,7 +1281,7 @@ groonga-client
     }
   end
 
-= Bind to model
+= Bind to model\n(('note:モデルと結びつける'))
 
   # coderay ruby
 
@@ -1077,7 +1294,7 @@ groonga-client
     source.content = :content
   end
 
-= Search
+= Search(('note:（検索）'))
 
   # coderay ruby
 
@@ -1092,23 +1309,27 @@ groonga-client
     end
   end
 
-= See also
+= See also\n(('note:参考情報'))
 
-  * Tutorial in Japanese
+  * Tutorial in Japanese\n
+    (('note:日本語のチュートリアル'))
     * (('tag:xx-small'))
       ((<URL:http://www.clear-code.com/blog/2016/12/22.html>))
 
 = Groonga
 
 mruby embedded\n
-full text search engine
+full text search engine\n
+(('note:mruby組込の全文検索エンジン'))
 
-= How to use?
+= How mruby is used?\n(('note:mrubyの使い方'))
 
-  * Optimizer
-  * Custom command
+  * Optimizer\n
+    (('note:オプティマイザー'))
+  * Custom command\n
+    (('note:カスタムコマンド'))
 
-= Example: Custom command
+= Custom command\n(('note:カスタムコマンド'))
 
   # coderay ruby
 
@@ -1118,170 +1339,222 @@ full text search engine
     end
   end
 
-= See also
+= Use cases\n(('note:利用例'))
 
-  * Redmine plugin
+  * Redmine plugin\n
+    (('note:Redmineのプラグイン'))
     * (('tag:x-small'))
       Repository: ((<URL:https://github.com/clear-code/redmine_full_text_search>))
     * (('tag:x-small'))
       Slide (in Japanese): ((<URL:https://slide.rabbit-shocker.org/authors/kou/redmine-tokyo-12/>))
+  * ...
 
-= Ranguba (WIP)
+= Ranguba (WIP)(('note:（開発中）'))
 
-Full text search system
+Full text search system\n
+(('note:全文検索システム'))
 
-= Use cases
+= Use cases\n(('note:利用例'))
 
-  * File server search
-  * Mail search
-  * Web site search
+  * File server search\n
+    (('note:ファイルサーバー検索'))
+  * Mail search\n
+    (('note:メール検索'))
+  * Web site search\n
+    (('note:Webサイト検索'))
 
-= Features
+= Features\n(('note:機能'))
 
-  * Crawlers
+  * Crawlers\n
+    (('note:クローラー'))
   * Web UI
   * CLI
-    * Update documents
-    * Search documents
+    * Update documents\n
+      (('note:更新'))
+    * Search documents\n
+      (('note:検索'))
 
 = ChupaText
 
-Text extractor
+Text extractor\n
+(('note:テキスト抽出'))
 
-= Supported formats
+= Supported formats\n(('note:対応フォーマット'))
 
   * PDF
-  * Office documents
+  * Office documents(('note:（オフィス文書）'))
     * Word, Excel, OpenDocument, ...
-  * Mail
+  * E-mail(('note:（メール）'))
   * ...
 
-= Interface
+= Interface\n(('note:インターフェイス'))
 
   * HTTP
   * Web UI
   * CLI
 
-= Install
+= Install - Docker
 
-  * Vagrant
-  * Docker
-  * gem install
+  # coderay console
+  % GITHUB=https://github.com
+  % git clone \
+     ${GITHUB}/ranguba/chupa-text-docker.git
+  % cd chupa-text-docker
+  % docker-compose up --build
 
-= Use cases
+= How to use\n(('note:使い方'))
+
+  # coderay console
+  % curl \
+      --form data=@XXX.pdf \
+      http://localhost:20080/extraction.json
+
+= Use cases\n(('note:利用例'))
 
   * Ranguba
-    * Full text search system
-  * Commit E-mail
+    * Full text search system\n
+      (('note:全文検索システム'))
+  * Commit e-mail\n
+    (('note:コミットメール'))
 
 = git-commit-mailer
 
-Commit E-mail for Git
+Commit e-mail for Git\n
+(('note:Git用のコミットメール'))
 
-= Features
+= Features\n(('note:機能'))
 
-  * HTML mail
-    * Highlighted diff
-  * GitLab/GitHub Web hook support
-    * (('tag:x-small'))
-      By ((<URL:https://github.com/clear-code/github-web-hooks-receiver>))
+  * HTML mail\n
+    (('note:HTMLメール'))
+    * Highlighted diff\n
+      (('note:diffをハイライト'))
+  * GitLab/GitHub Web hook support\n
+    (('note:GitLab/GitHubのWebフックをサポート'))
+    * (('tag:xx-small'))
+      By ((<"GitHub:clear-code/github-web-hooks-receiver"|URL:https://github.com/clear-code/github-web-hooks-receiver>))
 
-= Users
+= Users\n(('note:利用者'))
 
   * tDiary
   * My projects
 
-https://github.com/clear-code/git-commit-mailer
-
 = commit-email.info
 
-Commit E-mail\n
+Commit e-mail\n
 as a\n
-Service
+Service\n
+(('note:コミットメールのクラウドサービス'))
 
-= How to use?
+= How to use\n(('note:使い方'))
 
   * Send a pull request to\n
-    ((<"GitHub:kou/commit-email.info"|URL:https://github.com/kou/commit-email.info>))
-  * Register a Web hook
-  * Subscribe your mailing list
+    ((<"GitHub:kou/commit-email.info"|URL:https://github.com/kou/commit-email.info>))\n
+    (('note:pull requestを送る'))
+  * Register a Web hook\n
+    (('note:Webフックを登録'))
+  * Subscribe your mailing list\n
+    (('note:メーリングリストを購読'))
 
 (('note:See also ((<URL:http://www.commit-email.info/>))'))
 
-= Category5
+= Category5\n(('note:分類5'))
 
-Data processing
+Data processing\n
+(('note:データ処理'))
 
 = csv
 
-CSV parser
+CSV parser\n
+(('note:CSVパーサー'))
 
-= csv - History
+= csv - History\n(('note:歴史'))
 
-  * 2003: Import
-  * 2007: Replaced with FasterCSV
-  * 2018: I became a co-maintainer with mrkn
+  * 2003: Import\n
+    (('note:Rubyに取り込み'))
+  * 2007: Replaced with FasterCSV\n
+    (('note:FasterCSVで置き換え'))
+  * 2018: I became a co-maintainer with mrkn\n
+    (('note:mrknと一緒にメンテナーになった'))
 
-= Why?
+= Why?\n(('note:なんで？'))
 
-  * There are many CSV data
-  * Important to process data
+  * There are many CSV data\n
+    (('note:CSVのデータはたくさんある'))
+  * Important to process data\n
+    (('note:データを処理するためにCSVパーサーは重要'))
 
-= CSV format problems
+= CSV format problems\n(('note:CSVフォーマットの問題'))
 
-  * Slow to parse
-  * Too wild
+  * Slow to parse\n
+    (('note:パースが遅い'))
+  * Too wild\n
+    (('note:なんでもあり'))
 
 = Red Arrow
 
 Apache Arrow Ruby
 
-= Red Arrow - History
+= Red Arrow - History\n(('note:歴史'))
 
-  * 2017-02: The first commit
-  * 2018-05: Became the "official" Ruby bindings of Apache Arrow
+  * 2017-02: The first commit\n
+    (('note:最初のコミット'))
+  * 2018-05: Became the "official" Ruby bindings of Apache Arrow\n
+    (('note:Apache Arrowの公式Rubyバインディングになった'))
 
 = Apache Arrow
 
-  * Super fast data format
-    * For in-memory data
-  * Cross-language support
-    * Easy to share data with Python, Java, ...
+  * Super fast data format\n
+    (('note:すごく速いデータフォーマット'))
+    * For in-memory data\n
+      (('note:インメモリーデータ用'))
+  * Cross-language support\n
+    (('note:いろんな言語がサポート'))
+    * Easy to share data with Python, Java, ...\n
+      (('note:PythonやJavaなどとデータ交換がしやすい'))
 
-= Apache Arrow - Position
+= Apache Arrow - Position\n(('note:立ち位置'))
 
   * A very important peace\n
-    in recent data processing
-    * Like JIT for Ruby 3
+    in recent data processing\n
+    (('note:最近のデータ処理界隈ではすごく大事な1ピース'))
+    * Like JIT for Ruby 3\n
+      (('note:Ruby 3で例えるとJITみたいな感じ'))
 
-= Red Arrow - Impl
+= Red Arrow - Impl.\n(('note:実装'))
 
-  * Based on Ruby/GI
-    * Auto generated bindings
+  * Based on Ruby/GI\n
+    (('note:Ruby/GIを使っている'))
+    * Auto generated bindings\n
+      (('note:バインディングを自動生成'))
 
 = Red Data Tools
 
-A project to make Ruby data processable
+A project to make Ruby data processable\n
+(('note:Rubyでデータ処理できるようにするためのプロジェクト'))
 
-= Red Data Tools - History
+= Red Data Tools - History\n(('note:歴史'))
 
-  * 2017-02: Start
-  * 2017-11-: Develop events per month at Tokyo at Speee. Inc,
-    * 2018-06-20: The next event
+  * 2017-02: Start(('note:（開始）'))
+  * 2017-11-: Develop events per month at Tokyo at Speee. Inc,\n
+    (('note:東京のSpeeeさんで毎月開発イベントを開催'))
 
-= The number of products
+= The number of products\n(('note:プロダクト数'))
 
-About 20
+About 20\n
+(('note:約20'))
 
 = Red Datasets
 
-Dataset fetcher
+Dataset fetcher\n
+(('note:データセット取得'))
 
-= Red Datasets - History
+= Supported datasets\n(('note:対応データセット'))
 
-  * 2017-12: The first commit
+  * Iris
+  * CIFAR
+  * Wikipedia
 
-= Red Datasets - Example
+= Wikipedia
 
   # coderay ruby
 
@@ -1292,7 +1565,7 @@ Dataset fetcher
     p page.title
   end
 
-= Use case: Wikipedia search
+= Wikipedia search
 
   # coderay ruby
 
@@ -1310,18 +1583,19 @@ Dataset fetcher
 = jekyll-jupyter-notebook
 
 Jekyll\n
-+\n
+(('+'))\n
 Jupyter Notebook
 
-= Usage
+= Usage\n(('note:使い方'))
 
   {% jupyter_notebook sample.ipynb %}
 
 = Red OpenCV
 
-Computer Vision
+Computer vision\n
+(('note:コンピュータービジョン'))
 
-= Example - Camera
+= Camera(('note:（カメラ）'))
 
   # coderay ruby
 
@@ -1330,7 +1604,7 @@ Computer Vision
   image = camera.read
   image.write("capture.jpg")
 
-= Example - Face detect
+= Face detect(('note:（顔認識）'))
 
   # coderay ruby
 
@@ -1345,44 +1619,60 @@ Computer Vision
   end
   image.write("detect.jpg")
 
-= Red OpenCV - Impl
+= Red OpenCV - Impl.\n(('note:実装'))
 
-  * Based on Ruby/GI
-    * Auto generated bindings
+  * Based on Ruby/GI\n
+    (('note:Ruby/GIを使っている'))
+    * Auto generated bindings\n
+      (('note:バインディングを自動生成'))
 
-= Ad: Ruby Data Workshop
+= Ad: RubyData Workshop\n(('note:宣伝：RubyDataワークショップ'))
 
   * 2018-06-01 15:50/17:20
-  * Contents:
-    * Workshop by mrkn
-    * Presentations what Red Data Tools did by Red Data Tools members
+  * Contents:(('note:（内容）'))
+    * Workshop by mrkn\n
+      (('note:mrknによるワークショップ'))
+    * Presentations what Red Data Tools did by Red Data Tools members\n
+      (('note:Red Data ToolsメンバーによるRed Data Toolsでやってきたことの紹介'))
 
-= Process data with Ruby
+= Process data with Ruby\n(('note:Rubyでデータ処理'))
 
-  * We're working on it
-  * Do you want to work with us?
+  * We're working on it\n
+    (('note:Red Data Toolsは継続して取り組んでいる'))
+  * Do you want to work with us?\n
+    (('note:一緒にやりたい人はいる？'))
 
-= How to join 1
+= How to join1(('note:（参加方法1）'))
 
-  * Join our chat rooms:
+  * Join our chat rooms:\n
+    (('note:チャットルームに参加'))
     * English: ((<"Gitter:red-data-tools/en"|URL:https://gitter.im/red-data-tools/en>))
     * Japanese: ((<"Gitter:red-data-tools/ja"|URL:https://gitter.im/red-data-tools/ja>))
-  * Join monthly events at Tokyo
+  * Join monthly events at Tokyo\n
+    (('note:東京での毎月の開発イベントに参加'))
     * ((<URL:https://speee.connpass.com/>))
 
-= How to join 2
+= How to join2(('note:（参加方法2）'))
 
-  * Hire a developer to work on
-    * e.g.: mrkn by Speee, Inc.
+  * Hire a developer to work on\n
+    (('note:この問題に取り組む開発者を雇う'))
+    * e.g.: mrkn by Speee, Inc.\n
+      (('note:例：Speeeのmrkn'))
 
-= How to join 3
+= How to join3(('note:（参加方法3）'))
 
-  * Order ClearCode to work on it
-  * Join ClearCode to work on it
+  * Order ClearCode to work on it\n
+    (('note:クリアコードに開発の仕事を発注'))
+  * Join ClearCode to work on it\n
+    (('note:クリアコードに入って仕事として開発を進める'))
 
-= Wrap up
+= Wrap up\n(('note:まとめ'))
 
-  * I'm working on the followings as a Rubyist
-    * Increase what Ruby can
-    * Maintain libraries
-  * Do you want to work with me?
+  * I'm working on the followings as a Rubyist\n
+    (('note:Rubyistとしての私の活動'))
+    * Increase what Ruby can\n
+      (('note:Rubyでできることを増やす'))
+    * Maintain libraries\n
+      (('note:ライブラリーのメンテナス'))
+  * Do you want to work with me?\n
+    (('note:一緒にやりたい人はいる？'))
