@@ -1231,8 +1231,15 @@ Apache Arrow Ruby
 = Apache Arrow
 
   * Super fast data format
+    * For in-memory data
   * Cross-language support
     * Easy to share data with Python, Java, ...
+
+= Apache Arrow - Position
+
+  * A very important peace\n
+    in recent data processing
+    * Like JIT for Ruby 3
 
 = Red Arrow - Impl
 
@@ -1299,7 +1306,16 @@ Jupyter Notebook
 
 = Red OpenCV
 
-...
+Computer Vision
+
+= Red OpenCV - Example
+
+TODO
+
+= Red OpenCV - Impl
+
+  * Based on Ruby/GI
+    * Auto generated bindings
 
 = Ad: Ruby Data Workshop
 
@@ -1315,22 +1331,25 @@ Jupyter Notebook
 
 = How to join 1
 
-  * Chat: TODO
-  * Monthly event: TODO
+  * Join our chat rooms:
+    * English: ((<"Gitter:red-data-tools/en"|URL:https://gitter.im/red-data-tools/en>))
+    * Japanese: ((<"Gitter:red-data-tools/ja"|URL:https://gitter.im/red-data-tools/ja>))
+  * Join monthly events at Tokyo
+    * ((<URL:https://speee.connpass.com/>))
 
 = How to join 2
 
-  * Hier a developer to work on it
+  * Hire a developer to work on
     * e.g.: mrkn by Speee, Inc.
 
 = How to join 3
 
-  * Give ClearCode works
+  * Order ClearCode to work on it
   * Join ClearCode to work on it
 
 = Wrap up
 
-  * I'm working on ↓ as a Rubyist
+  * I'm working on the followings as a Rubyist
     * Increase what Ruby can
     * Maintain libraries
   * Do you want to work with me?
