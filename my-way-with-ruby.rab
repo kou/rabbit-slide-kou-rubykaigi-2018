@@ -39,7 +39,7 @@ Future
 
 Focus on\n
 one thing\n
-DEEPLY
+((*deeply*))
 
 = Keynote-ish topic3
 
@@ -92,7 +92,7 @@ with\n
 = RSS::Parser.parse
 
   # coderay ruby
-  # Validate by default
+  # Validates by default
   RSS::Parser.parse(rss)
   # Validation can be disabled
   RSS::Parser.parse(rss, false)
@@ -100,7 +100,7 @@ with\n
 = Since Ruby 2.6
 
   # coderay ruby
-  # Support option Hash
+  # Supports keyword argument
   parse(rss, validate: false)
 
 = REXML
@@ -111,7 +111,7 @@ written in\n
 
 = REXML - History
 
-  * 2001?: Start by Sean Russell\n
+  * 2001: Started by Sean Russell\n
     (('note:書運さんが開発を開始'))
     * Based on Electric XML (Java)
     * REXML is "Ruby Electric XML"
@@ -446,11 +446,34 @@ Ruby/Poppler
 
 = Ruby/Poppler
 
-PDF renderer
+PDF\n
+parser/renderer
 
 = Ruby/Poppler - Example
 
-TODO
+  # coderay ruby
+
+  require "poppler"
+  doc = Poppler::Document.new("x.pdf")
+  doc.each do |page|
+    puts page.text # Extract all texts
+  end
+
+= Ruby/Poppler - Example
+
+  # image
+  # src = images/rubykaigi-2017-extension-by-cpp-title.pdf
+  # relative_height = 80
+  # reflect_ratio = 0.1
+
+(('tag:center'))
+(('tag:x-small'))
+((<URL:http://rubykaigi.org/2017/presentations/ktou.html>))
+
+== Slide properties
+
+: enable-title-on-image
+   false
 
 = Ruby/GI based bindings
 
@@ -461,6 +484,22 @@ Ruby/GStreamer
 Audio/Video player
 
 (*) Streaming media framework
+
+= Ruby/GStreamer - Example
+
+  # coderay ruby
+
+  require "gst"
+  description = [
+    "autovideosrc",  # Camera
+    "videoconvert",  # Filter
+    "autovideosink", # Window
+  ].join(" ! ")
+  pipeline = Gst.parse_launch(description)
+  pipeline.play
+  until pipeline.bus.poll.type.eos? do
+  end # Main loop
+  pipeline.stop
 
 = Ruby/GStreamer - Example
 
@@ -493,21 +532,66 @@ PDF output
       got commit bit and more
   * 2005-10: 1.0.0
 
-= rcairo - Example
+= Example - Red A4 PDF
 
   # coderay ruby
 
-  window.signal_connect(:draw) do |_, context|
-    # context is an object in rcairo!
-    layout = context.create_pango_layout
-    layout.text = "Helloこんにちは🍣"
-    context.show_pango_layout(layout)
-    GLib::Source::CONTINUE
+  require "cairo"
+  include Cairo
+  PDFSurface.create("x.pdf", "A4") do |surface|
+    Context.create(surface) do |context|
+      context.set_source_color(:red)
+      context.paint
+    end
   end
 
 = rcairo - GC
 
-TODO
+    # image
+    # src = images/cairo-no-gc-trigger.pdf
+    # align = right
+    # vertical_align = bottom
+    # relative_width = 65
+    # relative_padding_right = -7
+    # relative_padding_bottom = -10
+
+  # coderay ruby
+  1000.times do
+    Cairo::ImageSurface.new(:argb32, 6000, 6000)
+  end
+
+(('tag:margin-bottom * 20'))
+
+= GC - Cause
+
+    # image
+    # src = images/cairo-no-gc-trigger.pdf
+    # align = right
+    # vertical_align = bottom
+    # relative_width = 67
+    # relative_padding_right = -11
+    # relative_padding_bottom = -10
+
+  * GC isn't ran enough frequency
+    * Because Ruby doesn't know how many memory used by cairo
+
+(('tag:margin-bottom * 18'))
+
+= GC - Fix
+
+    # image
+    # src = images/cairo-gc-trigger.pdf
+    # align = right
+    # vertical_align = bottom
+    # relative_width = 67
+    # relative_padding_right = -11
+    # relative_padding_bottom = -10
+
+  * (({rb_gc_adjust_memory_usage()}))
+    * Improve GC frequency
+  * Ruby 2.4 ships it
+
+(('tag:margin-bottom * 18'))
 
 = Category3
 
@@ -534,11 +618,8 @@ Grouping
 
 = Grouping
 
-(('tag:center'))
-The most important feature
-
-  * For maintainable tests
-  * TODO
+  * The most important feature
+  * Keep tests maintainable
 
 = Grouping - Example
 
@@ -669,12 +750,22 @@ Full text search\n
   # coderay ruby
 
   matches = docs.select do |record|
-    record.content =~ "concat"
+    record.content.match("concat")
   end
   p matches.size # => 1
   matches.each do |record|
     p record.content # => "String#<< concat..."
   end
+
+= Use case - Rabbit Slide Show
+
+  # img
+  # src = images/rabbit-slide-show.png
+  # relative_height = 78
+
+(('tag:center'))
+(('tag:small'))
+((<URL:https://slide.rabbit-shocker.org/>))
 
 = Use case - Rurema Search
 
@@ -702,7 +793,7 @@ https://docs.ruby-lang.org/ja/search/
   Rurema, Japanese, Japanese Rubyists
   RDoc, English, All Rubyists
 
-= Resource
+= Source
 
   * Shared nothing
     * Copy based share
@@ -732,11 +823,65 @@ https://docs.ruby-lang.org/ja/search/
 
 = YARD - i18n
 
-TODO
+  # coderay console
+
+  # Generates po/yard.pot
+  % yard i18n
+
+= YARD - i18n
+
+  # coderay console
+
+  # Create po/ja.po from po/yard.pot
+  % msginit \
+      --locale=ja_JP.UTF-8 \
+      --input=po/yard.pot \
+      --output-file=po/ja.po
+
+= YARD - i18n
+
+  # coderay console
+
+  # Translate messages in po/ja.po
+  % editor po/ja.po
+
+= YARD - i18n
+
+  # coderay console
+
+  # Generate documents with
+  # translate messages
+  % yard --locale ja
 
 = Packnga
 
-TODO
+Rake task for YARD i18n
+
+= Packnga - Example
+
+  # coderay ruby
+
+  # Rakefile
+  require "packnga"
+  Packnga::DocumentTask.new(spec) do |task|
+    task.original_language = "en"
+    task.translate_languages = ["ja"]
+  end
+
+= Packnga - Example
+
+  # coderay console
+
+  % rake reference:translate
+  % editor doc/po/ja/x.edit.po
+  % rake reference:translate
+  % editor doc/po/ja/x.edit.po
+  ...
+
+= Packnga - See also
+
+  * test-unit
+    * Real world example
 
 = RDoc - i18n
 
@@ -1017,6 +1162,11 @@ Apache Arrow Ruby
   * Super fast data format
   * Cross-language support
     * Easy to share data with Python, Java, ...
+
+= Red Arrow - Impl
+
+  * Based on Ruby/GI
+    * Auto generated bindings
 
 = Red Data Tools
 

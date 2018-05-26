@@ -1,6 +1,11 @@
 require "gst"
 
-pipeline = Gst.parse_launch("autovideosrc ! videoconvert ! autovideosink")
+description = [
+  "autovideosrc",  # Camera
+  "videoconvert",  # Filter
+  "autovideosink", # Window
+].join(" ! ")
+pipeline = Gst.parse_launch(description)
 pipeline.play
 loop do
   message = pipeline.bus.poll
