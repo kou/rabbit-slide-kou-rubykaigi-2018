@@ -850,7 +850,7 @@ https://docs.ruby-lang.org/ja/search/
   # coderay console
 
   # Generate documents with
-  # translate messages
+  # translated messages
   % yard --locale ja
 
 = Packnga
@@ -881,11 +881,41 @@ Rake task for YARD i18n
 = Packnga - See also
 
   * test-unit
-    * Real world example
+    * A real world user
 
 = RDoc - i18n
 
-TODO
+  # coderay console
+
+  # Generates doc/rdoc.pot
+  % rdoc --format=pot
+
+= RDoc - i18n
+
+  # coderay console
+
+  # Create locale/ja.po
+  # from doc/rdoc.pot
+  % mkdir -p locale
+  % msginit \
+      --locale=ja_JP.UTF-8 \
+      --input=doc/rdoc.pot \
+      --output-file=locale/ja.po
+
+= RDoc - i18n
+
+  # coderay console
+
+  # Translate messages in po/ja.po
+  % editor locale/ja.po
+
+= RDoc - i18n
+
+  # coderay console
+
+  # Generate documents with
+  # translated messages
+  % rdoc --locale ja
 
 = RDoc, Rurema and i18n
 
@@ -900,6 +930,23 @@ Jekyll + i18n
 
   * Support all markups!
   * GitHub pages ready!
+
+= Usage
+
+  # coderay ruby
+
+  # Rakefile
+  require "jekyll/task/i18n"
+  Jekyll::Task::I18n.define do |task|
+    task.locales = ["ja"]
+    task.files = Rake::FileList["**/*.md"]
+    task.files -= Rake::FileList["_*/**/*.md"]
+    task.files -= Rake::FileList["README.md"]
+    task.locales.each do |locale|
+      task.files -= Rake::FileList["#{locale}/**/*.md"]
+    end
+  end
+  task :default => ["jekyll:i18n:translate"]
 
 = Usage
 
@@ -1061,8 +1108,10 @@ full text search engine
 = See also
 
   * Redmine plugin
-    * TODO: Repository URL
-    * TODO: Slide URL
+    * (('tag:x-small'))
+      Repository: ((<URL:https://github.com/clear-code/redmine_full_text_search>))
+    * (('tag:x-small'))
+      Slide (in Japanese): ((<URL:https://slide.rabbit-shocker.org/authors/kou/redmine-tokyo-12/>))
 
 = Ranguba (WIP)
 
@@ -1090,7 +1139,7 @@ Text extractor
 
   * PDF
   * Office documents
-    * Word, Excel, OpenDocuments, ...
+    * Word, Excel, OpenDocument, ...
   * Mail
   * ...
 
@@ -1114,15 +1163,37 @@ Text extractor
 
 = git-commit-mailer
 
-TODO
+Commit E-mail for Git
+
+= Features
+
+  * HTML mail
+    * Highlighted diff
+  * GitLab/GitHub Web hook support
+    * (('tag:x-small'))
+      By ((<URL:https://github.com/clear-code/github-web-hooks-receiver>))
+
+= Users
+
+  * tDiary
+  * My projects
+
+https://github.com/clear-code/git-commit-mailer
 
 = commit-email.info
 
-TODO
+Commit E-mail\n
+as a\n
+Service
 
-= ruby-csv
+= How to use?
 
-TODO
+  * Send a pull request to\n
+    ((<"GitHub:kou/commit-email.info"|URL:https://github.com/kou/commit-email.info>))
+  * Register a Web hook
+  * Subscribe your mailing list
+
+(('note:See also ((<URL:http://www.commit-email.info/>))'))
 
 = Category5
 
@@ -1136,7 +1207,7 @@ CSV parser
 
   * 2003: Import
   * 2007: Replaced with FasterCSV
-  * 2018: Became a Ruby committer with mrkn
+  * 2018: I became a co-maintainer with mrkn
 
 = Why?
 
@@ -1154,7 +1225,7 @@ Apache Arrow Ruby
 
 = Red Arrow - History
 
-  * 2017: The first commit
+  * 2017-02: The first commit
   * 2018-05: Became the "official" Ruby bindings of Apache Arrow
 
 = Apache Arrow
@@ -1174,8 +1245,13 @@ A project to make Ruby data processable
 
 = Red Data Tools - History
 
-  * 2017: Start
-  * 2017: Develop events per month
+  * 2017-02: Start
+  * 2017-11-: Develop events per month at Tokyo at Speee. Inc,
+    * 2018-06-20: The next event
+
+= The number of products
+
+About 20
 
 = Red Datasets
 
@@ -1211,13 +1287,26 @@ Dataset fetcher
   end
   p ruby_pages.n_hits
 
+= jekyll-jupyter-notebook
+
+Jekyll\n
++\n
+Jupyter Notebook
+
+= Usage
+
+  {% jupyter_notebook sample.ipynb %}
+
 = Red OpenCV
 
 ...
 
 = Ad: Ruby Data Workshop
 
-TODO
+  * 2018-06-01 15:50/17:20
+  * Contents:
+    * Workshop by mrkn
+    * Presentations what Red Data Tools did by Red Data Tools members
 
 = Process data with Ruby
 
