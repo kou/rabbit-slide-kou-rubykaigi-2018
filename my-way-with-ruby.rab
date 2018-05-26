@@ -1308,9 +1308,29 @@ Jupyter Notebook
 
 Computer Vision
 
-= Red OpenCV - Example
+= Example - Camera
 
-TODO
+  # coderay ruby
+
+  require "cv"
+  camera = CV::Camera.new
+  image = camera.read
+  image.write("capture.jpg")
+
+= Example - Face detect
+
+  # coderay ruby
+
+  image_gray = image.convert_color(:bgr2gray)
+  classifier = # Face detector
+    CV::CascadeClassifier.new("frontalface_alt")
+  objects = classifier.detect(image_gray)
+  color = CV::Color.new(0, 0, 255)
+  objects.each do |object|
+    # Draw detected area
+    image.draw_rectangle(object, color)
+  end
+  image.write("detect.jpg")
 
 = Red OpenCV - Impl
 
