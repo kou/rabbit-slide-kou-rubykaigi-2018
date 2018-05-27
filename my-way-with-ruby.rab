@@ -11,7 +11,7 @@
 : start-time
    2018-06-01T09:40:00+09:00
 : end-time
-   2018-06-01T10:40:00+09:00
+   2018-06-01T10:35:00+09:00
 : theme
    .
 
@@ -145,11 +145,11 @@ written in\n
 
 = REXML - Side story\n(('note:おまけ話'))
 
-  * Sean is "書運" in Kanji\n
+  * Sean was "書運" in Kanji\n
     (('note:Seanさんには「書運」という漢字表記があった'))
   * He was interested in Japan\n
     (('note:日本好きだった'))
-    * "How to write your name in Kanji?"\n
+    * (('tag:x-small'))"How to write your name in Kanji?"\n
       (('note:「君の名前は漢字でどう書くの？」'))
   * We can connect with Ruby!\n
     (('note:RubyistはRubyをきっかけにつながれる！'))
@@ -222,9 +222,9 @@ This is a challenge\n
 
   * XML/HTML libraries for LuaJIT\n
     (('note:LuaJIT用のXML/HTMLライブラリー'))
-    * XMLua: (('tag:x-small:((<URL:https://clear-code.github.io/xmlua/>))'))\n
+    * XMLua: (('tag:xx-small:((<URL:https://clear-code.github.io/xmlua/>))'))\n
       libxml2 based XML/HTML parser
-    * LuaCS: (('tag:x-small:((<URL:https://clear-code.github.io/luacs/>))'))\n
+    * LuaCS: (('tag:xx-small:((<URL:https://clear-code.github.io/luacs/>))'))\n
       CSS Selectors→XPath converter
   * Found what lacks in REXML API\n
     (('note:REXMLのAPIに足りないものはなにか考えた'))
@@ -306,13 +306,13 @@ RD support\n
 
 = RD
 
+  * ((*R*))uby ((*D*))ocument\n
+    * Designed by Matz (('note:(Right?)'))\n
+      (('note:まつもとさんがデザインしたはず'))
   * A text based markup language\n
     (('note:テキストベースのマークアップ言語'))
     * Version controllable\n
       (('note:バージョン管理できる'))
-  * Designed by Matz\n
-    (('note:(Right?)'))\n
-    (('note:まつもとさんがデザインしたはず'))
 
 = For Rubyist?\n(('note:Rubyist向けに必要なもの'))
 
@@ -478,7 +478,7 @@ i18n support\n
 
   # coderay ruby
 
-  window.signal_connect(:draw) do |_, context|
+  widget.signal_connect(:draw) do |_, context|
     layout = context.create_pango_layout
     layout.text = "Helloこんにちは。🍣"
     context.show_pango_layout(layout)
@@ -555,7 +555,7 @@ parser/renderer\n
   # reflect_ratio = 0.1
 
 (('tag:center'))
-(('tag:x-small'))
+(('tag:xx-small'))
 ((<URL:http://rubykaigi.org/2017/presentations/ktou.html>))
 
 == Slide properties
@@ -607,12 +607,12 @@ Audio/Video player\n
   pipeline = Gst.parse_launch(description)
   pipeline.play
 
-= Embed video
+# = Embed video
 
-TODO
+# TODO
 
-#  # video
-#  # src = test.mp4
+# #  # video
+# #  # src = test.mp4
 
 = What's needed for presentation tool?\n(('note:プレゼンツールに必要なもの'))
 
@@ -637,10 +637,6 @@ PDF output\n
     (('note:最初のコミット'))
   * 2005-09: I started developing\n
     (('note:私が開発に参加'))
-    * Sent several patches and\n
-      got commit bit and more\n
-      (('note:パッチを投げてコミット権とかをもらった'))
-  * 2005-10: 1.0.0
 
 = Red A4 PDF\n(('note:赤いA4のPDFを出力'))
 
@@ -842,7 +838,7 @@ Reverse backtrace\n
 = Reverse backtrace\n(('note:逆順のバックトレース'))
 
   * Reverse backtrace only when terminal output\n
-    (('note:ターミなリュ出力のときだけ逆順'))
+    (('note:ターミナル出力のときだけ逆順'))
   * The same change as Ruby 2.5.0\n
     (('note:Ruby 2.5.0と同じ変更'))
 
@@ -885,13 +881,6 @@ Full text search\n
 Full text search\n
 ((*library*))\n
 (('note:全文検索ライブラリー'))
-
-= Rroonga - History\n(('note:歴史'))
-
-  * 2009-05: The first commit\n
-    (('note:最初のコミット'))
-    * I'm the author\n
-      (('note:私が作者'))
 
 = ((*Library*)) vs Client\n(('note:ライブラリー対クライアント'))
 
@@ -1383,7 +1372,7 @@ Text extractor\n
 
   * PDF
   * Office documents(('note:（オフィス文書）'))
-    * Word, Excel, OpenDocument, ...
+    * OpenDocument, Word, Excel, ...
   * E-mail(('note:（メール）'))
   * ...
 
@@ -1392,6 +1381,7 @@ Text extractor\n
   * HTTP
   * Web UI
   * CLI
+  * API (Library)
 
 = Install - Docker
 
@@ -1436,7 +1426,7 @@ Commit e-mail for Git\n
 = Users\n(('note:利用者'))
 
   * tDiary
-  * My projects
+  * My products
 
 = commit-email.info
 
@@ -1541,7 +1531,7 @@ A project to make Ruby data processable\n
 = The number of products\n(('note:プロダクト数'))
 
 About 20\n
-(('note:約20'))
+(('note:20くらい'))
 
 = Red Datasets
 
@@ -1632,7 +1622,7 @@ Computer vision\n
   * Contents:(('note:（内容）'))
     * Workshop by mrkn\n
       (('note:mrknによるワークショップ'))
-    * Presentations what Red Data Tools did by Red Data Tools members\n
+    * Presentations what Red Data Tools did by members\n
       (('note:Red Data ToolsメンバーによるRed Data Toolsでやってきたことの紹介'))
 
 = Process data with Ruby\n(('note:Rubyでデータ処理'))
@@ -1646,8 +1636,8 @@ Computer vision\n
 
   * Join our chat rooms:\n
     (('note:チャットルームに参加'))
-    * English: ((<"Gitter:red-data-tools/en"|URL:https://gitter.im/red-data-tools/en>))
-    * Japanese: ((<"Gitter:red-data-tools/ja"|URL:https://gitter.im/red-data-tools/ja>))
+    * en: ((<"Gitter:red-data-tools/en"|URL:https://gitter.im/red-data-tools/en>))
+    * ja: ((<"Gitter:red-data-tools/ja"|URL:https://gitter.im/red-data-tools/ja>))
   * Join monthly events at Tokyo\n
     (('note:東京での毎月の開発イベントに参加'))
     * ((<URL:https://speee.connpass.com/>))
