@@ -229,7 +229,7 @@ This is a challenge\n
   * Found what lacks in REXML API\n
     (('note:REXMLのAPIに足りないものはなにか考えた'))
 
-= REXML - Future1\n(('note:機能1'))
+= REXML - Future1\n(('note:未来1'))
 
 Introduce NodeSet\n
 (('note:NodeSetが足りないんじゃないか'))
@@ -238,10 +238,11 @@ Introduce NodeSet\n
 
   # coderay ruby
   doc.
-    search("//item"). # => NodeSet
-    text # All texts in <item>
+    search("//list"). # => NodeSet
+    search("item"). # => All <item> in <list>
+    text # All texts in <item> in <list>
 
-= REXML - Future2\n(('note:機能2'))
+= REXML - Future2\n(('note:未来2'))
 
 Support\n
 CSS Selectors\n
@@ -252,7 +253,7 @@ CSS Selectors\n
   # coderay ruby
   doc.css_select("ul li, dl dt")
 
-= REXML - Future3\n(('note:機能3'))
+= REXML - Future3\n(('note:未来3'))
 
 Support\n
 HTML5 support\n
@@ -391,7 +392,7 @@ all features\n
 
   * Rabbit is important\n
     (('note:Rabbitは大事だけど'))
-  * Increasing what Ruby can is also important\n
+  * Increasing what Ruby can is important too\n
     (('note:Rubyでできることを増やすのも大事'))
 
 = GTK+ 3 - Size\n(('note:サイズ'))
@@ -446,6 +447,33 @@ at run-time\n
 
 : enable-title-on-image
    false
+
+= Performance(('note:（性能）'))
+
+  * Slower than handwriting\n
+    (('note:手書きより遅い'))
+  * Overhead\n
+    (('note:オーバーヘッド'))
+    * Dynamic arguments conversion\n
+      (('note:動的な引数の変換'))
+    * libffi based function call\n
+      (('note:libffiを使った関数呼び出し'))
+
+= Improve idea(('note:（改善案）'))
+
+JIT
+
+= JIT
+
+  # coderay c
+
+  VALUE rb_method_generic() {
+    func = dlsym(name); ...
+    ffi_call(func, ..., &result);
+    return C2RB(result);
+  } ↓
+  // Build rb_method() at run-time and call it.
+  VALUE rb_method() {return C2RB(name(...));}
 
 = Ruby/GI - See also\n(('note:参考情報'))
 
@@ -593,7 +621,7 @@ Audio/Video player\n
   end # Main loop
   pipeline.stop
 
-= Face detection\n(('note:顔認識'))
+= Face detection(('note:（顔認識）'))
 
   # coderay ruby
 
@@ -1357,7 +1385,7 @@ Full text search system\n
   * Crawlers\n
     (('note:クローラー'))
   * Web UI
-  * CLI
+  * Command line interface
     * Update documents\n
       (('note:更新'))
     * Search documents\n
@@ -1380,7 +1408,7 @@ Text extractor\n
 
   * HTTP
   * Web UI
-  * CLI
+  * Command line interface
   * API (Library)
 
 = Install - Docker
@@ -1418,8 +1446,8 @@ Commit e-mail for Git\n
     (('note:HTMLメール'))
     * Highlighted diff\n
       (('note:diffをハイライト'))
-  * GitLab/GitHub Web hook support\n
-    (('note:GitLab/GitHubのWebフックをサポート'))
+  * GitLab/GitHub Web hook\n
+    (('note:GitLab/GitHubのWebフック対応'))
     * (('tag:xx-small'))
       By ((<"GitHub:clear-code/github-web-hooks-receiver"|URL:https://github.com/clear-code/github-web-hooks-receiver>))
 
@@ -1502,6 +1530,17 @@ Apache Arrow Ruby
     * Easy to share data with Python, Java, ...\n
       (('note:PythonやJavaなどとデータ交換がしやすい'))
 
+= Performance(('note:（性能）'))
+
+  # image
+  # src = images/csv-arrow.pdf
+  # relative_width = 100
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
 = Apache Arrow - Position\n(('note:立ち位置'))
 
   * A very important peace\n
@@ -1517,6 +1556,41 @@ Apache Arrow Ruby
     * Auto generated bindings\n
       (('note:バインディングを自動生成'))
 
+= Extendable load API\n(('note:拡張可能なロードAPI'))
+
+  # coderay ruby
+
+  # Load Apache Arrow data
+  Arrow::Table.load("iris.arrow")
+  # Load CSV data
+  Arrow::Table.load("iris.csv")
+  # Load Apache Parquet data
+  Arrow::Table.load("iris.parquet")
+
+= Apache Parquet
+
+  * Super fast data format\n
+    (('note:すごく速いデータフォーマット'))
+    * For storing analysis target data\n
+      (('note:解析対象のデータを保存する用'))
+  * Widely used\n
+    (('note:広く使われている'))
+
+= Performance(('note:（性能）'))
+
+  # image
+  # src = images/csv-arrow-parquet.pdf
+  # relative_width = 100
+
+== Slide properties
+
+: enable-title-on-image
+   false
+
+= Red Parquet
+
+Apache Parquet
+
 = Red Data Tools
 
 A project to make Ruby data processable\n
@@ -1531,7 +1605,9 @@ A project to make Ruby data processable\n
 = The number of products\n(('note:プロダクト数'))
 
 About 20\n
-(('note:20くらい'))
+(('note:including Red Arrow and Red Parquet'))\n
+(('note:20くらい'))\n
+(('note:Red ArrowやRed ParquetもRed Data Toolsプロダクツ'))
 
 = Red Datasets
 
@@ -1616,7 +1692,7 @@ Computer vision\n
     * Auto generated bindings\n
       (('note:バインディングを自動生成'))
 
-= Ad: RubyData Workshop\n(('note:宣伝：RubyDataワークショップ'))
+= Ad: RubyData Workshop
 
   * 2018-06-01 15:50/17:20
   * Contents:(('note:（内容）'))
