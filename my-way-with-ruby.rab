@@ -61,11 +61,6 @@ Overview\n
 About 130\n
 (('note:130くらい'))
 
-= How to find targets?\n(('note:そんなにネタがあるの？'))
-
-Just I needed\n
-(('note:単に自分が必要だったから'))
-
 = Today's topic\n(('note:今日の話題'))
 
 Overview\n
@@ -729,10 +724,10 @@ PDF output\n
 
 (('tag:margin-bottom * 18'))
 
-= Easy to install\n(('note:簡単インストール'))
+= What's needed for presentation tool?\n(('note:プレゼンツールに必要なもの'))
 
-Important\n
-(('note:大事'))
+Easy to install\n
+(('note:簡単インストール'))
 
 = native-package-installer
 
@@ -1333,39 +1328,6 @@ groonga-client\n
     * (('tag:xx-small'))
       ((<URL:http://www.clear-code.com/blog/2016/12/22.html>))
 
-= Groonga
-
-mruby embedded\n
-full text search engine\n
-(('note:mruby組込の全文検索エンジン'))
-
-= How mruby is used?\n(('note:mrubyの使い方'))
-
-  * Optimizer\n
-    (('note:オプティマイザー'))
-  * Custom command\n
-    (('note:カスタムコマンド'))
-
-= Custom command\n(('note:カスタムコマンド'))
-
-  # coderay ruby
-
-  module Sharding
-    class LogicalSelectCommand < Groonga::Command
-      # ...
-    end
-  end
-
-= Use cases\n(('note:利用例'))
-
-  * Redmine plugin\n
-    (('note:Redmineのプラグイン'))
-    * (('tag:x-small'))
-      Repository: ((<URL:https://github.com/clear-code/redmine_full_text_search>))
-    * (('tag:x-small'))
-      Slide (in Japanese): ((<URL:https://slide.rabbit-shocker.org/authors/kou/redmine-tokyo-12/>))
-  * ...
-
 = Ranguba (WIP)(('note:（開発中）'))
 
 Full text search system\n
@@ -1642,7 +1604,8 @@ Dataset fetcher\n
               content: page.revision.text)
   end
   ruby_pages = pages.select do |record|
-    record.match("Ruby")
+    record.match("Ruby OR Rails",
+                 "title * 10 || content")
   end
   p ruby_pages.n_hits
 
