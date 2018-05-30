@@ -26,7 +26,11 @@ wikipedia.each do |page|
 end
 
 ruby_pages = pages.select do |record|
-  record.match("Ruby OR Rails",
-               "title * 10 || content")
+  record.match("Ruby OR Rails") do |target|
+    (target.title * 10) | (target.content)
+  end
 end
-p ruby_pages.n_hits
+p ruby_pages.size
+ruby_pages.each do |page|
+  p [page.title, page.score]
+end
