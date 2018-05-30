@@ -1,5 +1,6 @@
 PATH="/tmp/local/bin:$PATH"
 
+cpp_dir=$(echo ~/work/cpp)
 ruby_dir=$(echo ~/work/ruby)
 ruby_gnome2_dir=$(echo ~/work/ruby/ruby-gnome2.trunk)
 rcairo_dir=$(dirname $ruby_gnome2_dir)/$(basename $ruby_gnome2_dir | sed -e 's/ruby-gnome2/rcairo/')
@@ -43,4 +44,15 @@ RUBYLIB="${ruby_gnome2_dir}/gsf/lib:${RUBYLIB}"
 RUBYLIB="${ruby_gnome2_dir}/goffice/lib:${RUBYLIB}"
 RUBYLIB="${ruby_gnome2_dir}/gnumeric/lib:${RUBYLIB}"
 
+RUBYLIB="${ruby_dir}/rroonga/ext/groonga:${RUBYLIB}"
+RUBYLIB="${ruby_dir}/rroonga/lib:${RUBYLIB}"
+RUBYLIB="${ruby_dir}/groonga-command/lib:${RUBYLIB}"
+RUBYLIB="${ruby_dir}/groonga-client/lib:${RUBYLIB}"
+RUBYLIB="${ruby_dir}/groonga-gqtp/lib:${RUBYLIB}"
+
+RUBYLIB="${cpp_dir}/arrow.kou/ruby/red-arrow/lib:${RUBYLIB}"
+RUBYLIB="${cpp_dir}/arrow.kou/ruby/red-arrow-gpu/lib:${RUBYLIB}"
+
 RUBYLIB="${ruby_dir}/red-opencv/lib:${RUBYLIB}"
+
+RUBYLIB="${ruby_dir}/red-datasets/lib:${RUBYLIB}"
