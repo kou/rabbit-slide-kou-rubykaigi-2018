@@ -68,7 +68,7 @@ what we can do\n
 ((*with Ruby*))\n
 (('note:Rubyでできるようになったことをたくさん紹介'))
 
-= Category1\n(('note:分類1'))
+= Opening1\n(('note:きっかけ1'))
 
 Web feed\n
 (('note:Webフィード'))
@@ -269,7 +269,7 @@ HTML5 support\n
   * Do you want to work with me?\n
     (('note:一緒にやりたい人はいる？'))
 
-= Category2\n(('note:分類1'))
+= Opening2\n(('note:きっかけ1'))
 
 Presentation\n
 (('note:プレゼンテーション'))
@@ -773,7 +773,7 @@ cross compile\n
     I became the maintainer\n
     (('note:私がメンテナーになった'))
 
-= Category3\n(('note:分類3'))
+= Opening3\n(('note:きっかけ3'))
 
 Test\n
 (('note:テスト'))
@@ -894,7 +894,7 @@ RR integration\n
   stub(adder).add(1, 2) {3}
   adder.add(1, 2) # => 3
 
-= Category4\n(('note:分類4'))
+= Opening4\n(('note:きっかけ4'))
 
 Full text search\n
 (('note:全文検索'))
@@ -1437,7 +1437,7 @@ Service\n
 
 (('note:See also ((<URL:http://www.commit-email.info/>))'))
 
-= Category5\n(('note:分類5'))
+= Opening5\n(('note:きっかけ5'))
 
 Data processing\n
 (('note:データ処理'))
