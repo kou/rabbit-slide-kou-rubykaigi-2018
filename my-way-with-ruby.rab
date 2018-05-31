@@ -51,12 +51,12 @@ Overview\n
 
 = My activities\nas a Rubyist\n(('note:私のRubyist活動'))
 
-  * Increase what Ruby can\n
+  * Increase what Ruby can do\n
     (('note:Rubyでできることを増やす'))
   * Maintain libraries\n
     (('note:ライブラリーのメンテナンス'))
 
-= The number of developing libraries\n(('note:開発しているライブラリー数'))
+= The number of libraries maintained\n(('note:メンテナンスしているライブラリー数'))
 
 About 130\n
 (('note:130くらい'))
@@ -167,7 +167,7 @@ written in\n
 This is a challenge\n
 (('note:実験的な企画'))
 
-  * Ruby focus to have fun\n
+  * Ruby focus: to have fun\n
     (('note:Rubyは楽しさを大事にしている'))
   * We have fun writing Ruby\n
     (('note:Rubyistは楽しくRubyを書いている'))
@@ -221,7 +221,7 @@ This is a challenge\n
       libxml2 based XML/HTML parser
     * LuaCS: (('tag:xx-small:((<URL:https://clear-code.github.io/luacs/>))'))\n
       CSS Selectors→XPath converter
-  * Found what lacks in REXML API\n
+  * Found what is lacking in REXML API\n
     (('note:REXMLのAPIに足りないものはなにか考えた'))
 
 = REXML - Future1\n(('note:未来1'))
@@ -288,7 +288,7 @@ for ((*Rubyist*))\n
 
   * 2004-07: The first release\n
     (('note:最初のリリース'))
-    * No other presentation tool for Rubyist even now\n
+    * No other presentation tool for a Rubyist even now\n
       (('note:今でもRubyist用のプレゼンツールは他にない'))
   * 2010: Matz migrated to Rabbit\n
     (('note:まつもとさんがRabbitに乗り換えた'))
@@ -387,12 +387,12 @@ all features\n
 
   * Rabbit is important\n
     (('note:Rabbitは大事だけど'))
-  * Increasing what Ruby can is important too\n
+  * Increasing what Ruby can do is important too\n
     (('note:Rubyでできることを増やすのも大事'))
 
 = GTK+ 3 - Size\n(('note:サイズ'))
 
-3000 over API\n
+3000 over APIs\n
 (('note:3000以上のAPI'))
 
 = How to implement\n(('note:実装方法'))
@@ -539,7 +539,7 @@ Image manipulation\n
   # Save as different format
   half.save("half.jpg")
 
-= Animation GIF\n(('note:アニメーションGIF'))
+= Animated GIF\n(('note:アニメーションGIF'))
 
   # img
   # src = images/the-tortoise-and-the-hare.gif
@@ -701,9 +701,9 @@ PDF output\n
     # relative_padding_right = -11
     # relative_padding_bottom = -10
 
-  * GC isn't ran enough frequency\n
+  * GC isn't run often enough\n
     (('note:GCの実行頻度が十分じゃなかった'))
-    * Because Ruby doesn't know how many memory used by cairo\n
+    * Because Ruby doesn't know how much memory used by cairo\n
       (('note:Rubyはcairoのメモリー使用量を知らないから'))
 
 (('tag:margin-bottom * 16'))
@@ -860,7 +860,7 @@ Reverse backtrace\n
 
 = Reverse backtrace\n(('note:逆順のバックトレース'))
 
-  * Reverse backtrace only when terminal output\n
+  * Reverse backtrace only for terminal output\n
     (('note:ターミナル出力のときだけ逆順'))
   * The same change as Ruby 2.5.0\n
     (('note:Ruby 2.5.0と同じ変更'))
@@ -980,7 +980,7 @@ Full text search\n
 
   * Super fast!\n
     (('note:すごく速い！'))
-  * Tune for programming document\n
+  * Tuned for programming documents\n
     (('note:プログラミングのドキュメント用にチューニング'))
     * Symbols (@, #, ...) are important\n
       (('note:@とか#とかの記号も大事'))
@@ -1211,7 +1211,7 @@ Full text search\n
 
   * Less dependencies\n
     (('note:依存関係が少ない'))
-  * Less needed resource\n
+  * Less resources needed\n
     (('note:必要なリソースが少ない'))
 
 = Search(('note:（検索）'))
@@ -1458,7 +1458,7 @@ CSV parser\n
 
 = Why?\n(('note:なんで？'))
 
-  * There are many CSV data\n
+  * There are many CSV data sources\n
     (('note:CSVのデータはたくさんある'))
   * Important to process data\n
     (('note:データを処理するためにCSVパーサーは重要'))
@@ -1505,7 +1505,7 @@ Apache Arrow Ruby
 
 = Apache Arrow - Position\n(('note:立ち位置'))
 
-  * A very important peace\n
+  * A very important piece\n
     in recent data processing\n
     (('note:最近のデータ処理界隈ではすごく大事な1ピース'))
     * Like JIT for Ruby 3\n
@@ -1662,7 +1662,7 @@ Computer vision\n
   * Contents:(('note:（内容）'))
     * Workshop by mrkn\n
       (('note:mrknによるワークショップ'))
-    * Presentations what Red Data Tools did by members\n
+    * Presentations from Red Data Tools members\n
       (('note:Red Data ToolsメンバーによるRed Data Toolsでやってきたことの紹介'))
 
 = Process data with Ruby\n(('note:Rubyでデータ処理'))
@@ -1684,7 +1684,7 @@ Computer vision\n
 
 = How to join2(('note:（参加方法2）'))
 
-  * Hire a developer to work on\n
+  * Hire a developer to work on it\n
     (('note:この問題に取り組む開発者を雇う'))
     * e.g.: mrkn by Speee, Inc.\n
       (('note:例：Speeeのmrkn'))
@@ -1698,9 +1698,9 @@ Computer vision\n
 
 = Wrap up\n(('note:まとめ'))
 
-  * I'm working on the followings as a Rubyist\n
+  * I'm working on the following as a Rubyist\n
     (('note:Rubyistとしての私の活動'))
-    * Increase what Ruby can\n
+    * Increase what Ruby can do\n
       (('note:Rubyでできることを増やす'))
     * Maintain libraries\n
       (('note:ライブラリーのメンテナス'))
