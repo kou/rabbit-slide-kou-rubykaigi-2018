@@ -2,7 +2,7 @@
 
 Here are my activities as a Rubyist:
 
-  * Increase what Ruby can
+  * Increase what Ruby can do with free software
   * Maintain libraries
 
 In this talk, I introduce my activities.
