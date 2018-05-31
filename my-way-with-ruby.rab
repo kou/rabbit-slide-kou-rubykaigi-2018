@@ -15,6 +15,16 @@
 : theme
    .
 
+= Acknowledgment\n(('note:感謝'))
+
+(('tag:center'))
+@drbrain\n
+Eric Hodel
+
+(('tag:center'))
+He fixed English in this slide\n
+(('note:英語をチェックしてくれたよ！ありがとう！'))
+
 = Ad: Silver sponsor
 
   # img
@@ -56,7 +66,7 @@ Overview\n
   * Maintain libraries\n
     (('note:ライブラリーのメンテナンス'))
 
-= The number of libraries maintained\n(('note:メンテナンスしているライブラリー数'))
+= # of libraries maintained\n(('note:メンテナンスしているライブラリー数'))
 
 About 130\n
 (('note:130くらい'))
@@ -456,9 +466,10 @@ at run-time\n
 
 = Improve idea(('note:（改善案）'))
 
-JIT
+JIT compiling\n
+(('note:JITコンパイル'))
 
-= JIT
+= JIT compiling(('note:（JITコンパイル）'))
 
   # coderay c
 
@@ -1337,7 +1348,7 @@ Full text search system\n
 
   * File server search\n
     (('note:ファイルサーバー検索'))
-  * Mail search\n
+  * E-mail search\n
     (('note:メール検索'))
   * Web site search\n
     (('note:Webサイト検索'))
@@ -1458,7 +1469,8 @@ CSV parser\n
 
 = Why?\n(('note:なんで？'))
 
-  * There are many CSV data sources\n
+  * There are many data sources\n
+    in CSV\n
     (('note:CSVのデータはたくさんある'))
   * Important to process data\n
     (('note:データを処理するためにCSVパーサーは重要'))
@@ -1662,7 +1674,8 @@ Computer vision\n
   * Contents:(('note:（内容）'))
     * Workshop by mrkn\n
       (('note:mrknによるワークショップ'))
-    * Presentations from Red Data Tools members\n
+    * Presentations from\n
+      Red Data Tools members\n
       (('note:Red Data ToolsメンバーによるRed Data Toolsでやってきたことの紹介'))
 
 = Process data with Ruby\n(('note:Rubyでデータ処理'))
@@ -1684,10 +1697,10 @@ Computer vision\n
 
 = How to join2(('note:（参加方法2）'))
 
-  * Hire a developer to work on it\n
-    (('note:この問題に取り組む開発者を雇う'))
+  * Hire developers to work on it\n
+    (('note:仕事として開発する開発者を雇う'))
     * e.g.: mrkn by Speee, Inc.\n
-      (('note:例：Speeeのmrkn'))
+      (('note:例：Speeeの村田さん'))
 
 = How to join3(('note:（参加方法3）'))
 
