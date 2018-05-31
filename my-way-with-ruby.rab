@@ -997,10 +997,8 @@ Full text search\n
 
   * Super fast!\n
     (('note:すごく速い！'))
-  * Tuned for programming documents\n
-    (('note:プログラミングのドキュメント用にチューニング'))
-    * Symbols (@, #, ...) are important\n
-      (('note:@とか#とかの記号も大事'))
+  * Tuned for Ruby documents\n
+    (('note:Rubyのドキュメント用にチューニング'))
 
 = User - RDoc Search
 
