@@ -62,7 +62,8 @@ Overview\n
 = My activities\nas a Rubyist\n(('note:私のRubyist活動'))
 
   * Increase what Ruby can do\n
-    (('note:Rubyでできることを増やす'))
+    with free software\n
+    (('note:フリーソフトウェアを使ってRubyでできることを増やす'))
   * Maintain libraries\n
     (('note:ライブラリーのメンテナンス'))
 
@@ -77,6 +78,11 @@ Overview\n
 what we can do\n
 ((*with Ruby*))\n
 (('note:Rubyでできるようになったことをたくさん紹介'))
+
+= How to find targets?\n(('note:そんなにネタがあるの？'))
+
+Just I needed\n
+(('note:単に自分が必要だったから'))
 
 = Opening1\n(('note:きっかけ1'))
 
@@ -1714,7 +1720,8 @@ Computer vision\n
   * I'm working on the following as a Rubyist\n
     (('note:Rubyistとしての私の活動'))
     * Increase what Ruby can do\n
-      (('note:Rubyでできることを増やす'))
+      with free software\n
+      (('note:フリーソフトウェアを使ってRubyでできることを増やす'))
     * Maintain libraries\n
       (('note:ライブラリーのメンテナス'))
   * Do you want to work with me?\n
