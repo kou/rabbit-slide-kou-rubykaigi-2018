@@ -15,16 +15,6 @@
 : theme
    .
 
-= Acknowledgment\n(('note:感謝'))
-
-(('tag:center'))
-@drbrain\n
-Eric Hodel
-
-(('tag:center'))
-He fixed English in this slide\n
-(('note:英語をチェックしてくれたよ！ありがとう！'))
-
 = Ad: Silver sponsor
 
   # img
@@ -36,6 +26,16 @@ He fixed English in this slide\n
 
 : enable-title-on-image
    false
+
+= Acknowledgment\n(('note:感謝'))
+
+(('tag:center'))
+@drbrain\n
+Eric Hodel
+
+(('tag:center'))
+He fixed English in this slide\n
+(('note:英語をチェックしてくれたよ！ありがとう！'))
 
 = Keynote-ish topic\n(('note:キーノートっぽい話題'))
 
@@ -1604,7 +1604,7 @@ Dataset fetcher\n
 
   require "datasets"
 
-  wikipedia = Datasets::WikiPedia.new
+  wikipedia = Datasets::Wikipedia.new
   wikipedia.each do |page|
     p page.title
   end
@@ -1614,7 +1614,7 @@ Dataset fetcher\n
   # coderay ruby
 
   pages = Groonga["pages"]
-  wikipedia = Datasets::WikiPedia.new
+  wikipedia = Datasets::Wikipedia.new
   wikipedia.each do |page|
     pages.add(title: page.title,
               content: page.revision.text)
